@@ -4,12 +4,6 @@
 
 package myfirstmodule.proxies;
 
-import com.mendix.core.Core;
-import com.mendix.core.CoreException;
-import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.systemwideinterfaces.core.IMendixIdentifier;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
-
 /**
  * 
  */
@@ -18,7 +12,7 @@ public class ProductTreeWidgetData extends myfirstmodule.proxies.TreeViewWidgetD
 	/**
 	 * Internal name of this entity
 	 */
-	public static final String entityName = "MyFirstModule.ProductTreeWidgetData";
+	public static final java.lang.String entityName = "MyFirstModule.ProductTreeWidgetData";
 
 	/**
 	 * Enum describing members of this entity
@@ -31,47 +25,37 @@ public class ProductTreeWidgetData extends myfirstmodule.proxies.TreeViewWidgetD
 		ProductTreeNodeToDisplay("MyFirstModule.ProductTreeNodeToDisplay"),
 		ProductTreeWidgetData_Product_New("MyFirstModule.ProductTreeWidgetData_Product_New");
 
-		private String metaName;
+		private java.lang.String metaName;
 
-		MemberNames(String s)
+		MemberNames(java.lang.String s)
 		{
 			metaName = s;
 		}
 
 		@Override
-		public String toString()
+		public java.lang.String toString()
 		{
 			return metaName;
 		}
 	}
 
-	public ProductTreeWidgetData(IContext context)
+	public ProductTreeWidgetData(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, Core.instantiate(context, "MyFirstModule.ProductTreeWidgetData"));
+		this(context, com.mendix.core.Core.instantiate(context, "MyFirstModule.ProductTreeWidgetData"));
 	}
 
-	protected ProductTreeWidgetData(IContext context, IMendixObject productTreeWidgetDataMendixObject)
+	protected ProductTreeWidgetData(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject productTreeWidgetDataMendixObject)
 	{
 		super(context, productTreeWidgetDataMendixObject);
-		if (!Core.isSubClassOf("MyFirstModule.ProductTreeWidgetData", productTreeWidgetDataMendixObject.getType()))
-			throw new IllegalArgumentException("The given object is not a MyFirstModule.ProductTreeWidgetData");
-	}
-
-	/**
-	 * @deprecated Use 'new ProductTreeWidgetData(Context)' instead. Note that the constructor will not insert the new object in the database.
-	 */
-	@Deprecated
-	public static myfirstmodule.proxies.ProductTreeWidgetData create(IContext context) throws CoreException
-	{
-		IMendixObject mendixObject = Core.create(context, "MyFirstModule.ProductTreeWidgetData");
-		return new myfirstmodule.proxies.ProductTreeWidgetData(context, mendixObject);
+		if (!com.mendix.core.Core.isSubClassOf("MyFirstModule.ProductTreeWidgetData", productTreeWidgetDataMendixObject.getType()))
+			throw new java.lang.IllegalArgumentException("The given object is not a MyFirstModule.ProductTreeWidgetData");
 	}
 
 	/**
 	 * @deprecated Use 'ProductTreeWidgetData.load(IContext, IMendixIdentifier)' instead.
 	 */
 	@Deprecated
-	public static myfirstmodule.proxies.ProductTreeWidgetData initialize(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static myfirstmodule.proxies.ProductTreeWidgetData initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return myfirstmodule.proxies.ProductTreeWidgetData.load(context, mendixIdentifier);
 	}
@@ -80,14 +64,14 @@ public class ProductTreeWidgetData extends myfirstmodule.proxies.TreeViewWidgetD
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
 	 */
-	public static myfirstmodule.proxies.ProductTreeWidgetData initialize(IContext context, IMendixObject mendixObject)
+	public static myfirstmodule.proxies.ProductTreeWidgetData initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
 		return new myfirstmodule.proxies.ProductTreeWidgetData(context, mendixObject);
 	}
 
-	public static myfirstmodule.proxies.ProductTreeWidgetData load(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static myfirstmodule.proxies.ProductTreeWidgetData load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
-		IMendixObject mendixObject = Core.retrieveId(context, mendixIdentifier);
+		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
 		return myfirstmodule.proxies.ProductTreeWidgetData.initialize(context, mendixObject);
 	}
 
@@ -104,13 +88,13 @@ public class ProductTreeWidgetData extends myfirstmodule.proxies.TreeViewWidgetD
 	 * @param context
 	 * @return value of SelectionType
 	 */
-	public final myfirstmodule.proxies.ProductTreeSelectionType getSelectionType(IContext context)
+	public final myfirstmodule.proxies.ProductTreeSelectionType getSelectionType(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		Object obj = getMendixObject().getValue(context, MemberNames.SelectionType.toString());
 		if (obj == null)
 			return null;
 
-		return myfirstmodule.proxies.ProductTreeSelectionType.valueOf((String) obj);
+		return myfirstmodule.proxies.ProductTreeSelectionType.valueOf((java.lang.String) obj);
 	}
 
 	/**
@@ -127,7 +111,7 @@ public class ProductTreeWidgetData extends myfirstmodule.proxies.TreeViewWidgetD
 	 * @param context
 	 * @param selectiontype
 	 */
-	public final void setSelectionType(IContext context, myfirstmodule.proxies.ProductTreeSelectionType selectiontype)
+	public final void setSelectionType(com.mendix.systemwideinterfaces.core.IContext context, myfirstmodule.proxies.ProductTreeSelectionType selectiontype)
 	{
 		if (selectiontype != null)
 			getMendixObject().setValue(context, MemberNames.SelectionType.toString(), selectiontype.toString());
@@ -138,7 +122,7 @@ public class ProductTreeWidgetData extends myfirstmodule.proxies.TreeViewWidgetD
 	/**
 	 * @return value of ProductTreeNodeToDisplay
 	 */
-	public final myfirstmodule.proxies.ProductTreeNodeData getProductTreeNodeToDisplay() throws CoreException
+	public final myfirstmodule.proxies.ProductTreeNodeData getProductTreeNodeToDisplay() throws com.mendix.core.CoreException
 	{
 		return getProductTreeNodeToDisplay(getContext());
 	}
@@ -147,10 +131,10 @@ public class ProductTreeWidgetData extends myfirstmodule.proxies.TreeViewWidgetD
 	 * @param context
 	 * @return value of ProductTreeNodeToDisplay
 	 */
-	public final myfirstmodule.proxies.ProductTreeNodeData getProductTreeNodeToDisplay(IContext context) throws CoreException
+	public final myfirstmodule.proxies.ProductTreeNodeData getProductTreeNodeToDisplay(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		myfirstmodule.proxies.ProductTreeNodeData result = null;
-		IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.ProductTreeNodeToDisplay.toString());
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.ProductTreeNodeToDisplay.toString());
 		if (identifier != null)
 			result = myfirstmodule.proxies.ProductTreeNodeData.load(context, identifier);
 		return result;
@@ -170,7 +154,7 @@ public class ProductTreeWidgetData extends myfirstmodule.proxies.TreeViewWidgetD
 	 * @param context
 	 * @param producttreenodetodisplay
 	 */
-	public final void setProductTreeNodeToDisplay(IContext context, myfirstmodule.proxies.ProductTreeNodeData producttreenodetodisplay)
+	public final void setProductTreeNodeToDisplay(com.mendix.systemwideinterfaces.core.IContext context, myfirstmodule.proxies.ProductTreeNodeData producttreenodetodisplay)
 	{
 		if (producttreenodetodisplay == null)
 			getMendixObject().setValue(context, MemberNames.ProductTreeNodeToDisplay.toString(), null);
@@ -181,7 +165,7 @@ public class ProductTreeWidgetData extends myfirstmodule.proxies.TreeViewWidgetD
 	/**
 	 * @return value of ProductTreeWidgetData_Product_New
 	 */
-	public final myfirstmodule.proxies.Product getProductTreeWidgetData_Product_New() throws CoreException
+	public final myfirstmodule.proxies.Product getProductTreeWidgetData_Product_New() throws com.mendix.core.CoreException
 	{
 		return getProductTreeWidgetData_Product_New(getContext());
 	}
@@ -190,10 +174,10 @@ public class ProductTreeWidgetData extends myfirstmodule.proxies.TreeViewWidgetD
 	 * @param context
 	 * @return value of ProductTreeWidgetData_Product_New
 	 */
-	public final myfirstmodule.proxies.Product getProductTreeWidgetData_Product_New(IContext context) throws CoreException
+	public final myfirstmodule.proxies.Product getProductTreeWidgetData_Product_New(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		myfirstmodule.proxies.Product result = null;
-		IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.ProductTreeWidgetData_Product_New.toString());
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.ProductTreeWidgetData_Product_New.toString());
 		if (identifier != null)
 			result = myfirstmodule.proxies.Product.load(context, identifier);
 		return result;
@@ -213,7 +197,7 @@ public class ProductTreeWidgetData extends myfirstmodule.proxies.TreeViewWidgetD
 	 * @param context
 	 * @param producttreewidgetdata_product_new
 	 */
-	public final void setProductTreeWidgetData_Product_New(IContext context, myfirstmodule.proxies.Product producttreewidgetdata_product_new)
+	public final void setProductTreeWidgetData_Product_New(com.mendix.systemwideinterfaces.core.IContext context, myfirstmodule.proxies.Product producttreewidgetdata_product_new)
 	{
 		if (producttreewidgetdata_product_new == null)
 			getMendixObject().setValue(context, MemberNames.ProductTreeWidgetData_Product_New.toString(), null);
@@ -244,7 +228,7 @@ public class ProductTreeWidgetData extends myfirstmodule.proxies.TreeViewWidgetD
 	/**
 	 * @return String name of this class
 	 */
-	public static String getType()
+	public static java.lang.String getType()
 	{
 		return "MyFirstModule.ProductTreeWidgetData";
 	}
@@ -255,7 +239,7 @@ public class ProductTreeWidgetData extends myfirstmodule.proxies.TreeViewWidgetD
 	 */
 	@Override
 	@Deprecated
-	public String getGUID()
+	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
 	}

@@ -4,25 +4,19 @@
 
 package myfirstmodule.proxies;
 
-import com.mendix.core.Core;
-import com.mendix.core.CoreException;
-import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.systemwideinterfaces.core.IMendixIdentifier;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
-
 /**
  * 
  */
 public class Product
 {
-	private final IMendixObject productMendixObject;
+	private final com.mendix.systemwideinterfaces.core.IMendixObject productMendixObject;
 
-	private final IContext context;
+	private final com.mendix.systemwideinterfaces.core.IContext context;
 
 	/**
 	 * Internal name of this entity
 	 */
-	public static final String entityName = "MyFirstModule.Product";
+	public static final java.lang.String entityName = "MyFirstModule.Product";
 
 	/**
 	 * Enum describing members of this entity
@@ -33,51 +27,41 @@ public class Product
 		Price("Price"),
 		Product_ProductGroup("MyFirstModule.Product_ProductGroup");
 
-		private String metaName;
+		private java.lang.String metaName;
 
-		MemberNames(String s)
+		MemberNames(java.lang.String s)
 		{
 			metaName = s;
 		}
 
 		@Override
-		public String toString()
+		public java.lang.String toString()
 		{
 			return metaName;
 		}
 	}
 
-	public Product(IContext context)
+	public Product(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, Core.instantiate(context, "MyFirstModule.Product"));
+		this(context, com.mendix.core.Core.instantiate(context, "MyFirstModule.Product"));
 	}
 
-	protected Product(IContext context, IMendixObject productMendixObject)
+	protected Product(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject productMendixObject)
 	{
 		if (productMendixObject == null)
-			throw new IllegalArgumentException("The given object cannot be null.");
-		if (!Core.isSubClassOf("MyFirstModule.Product", productMendixObject.getType()))
-			throw new IllegalArgumentException("The given object is not a MyFirstModule.Product");
+			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
+		if (!com.mendix.core.Core.isSubClassOf("MyFirstModule.Product", productMendixObject.getType()))
+			throw new java.lang.IllegalArgumentException("The given object is not a MyFirstModule.Product");
 
 		this.productMendixObject = productMendixObject;
 		this.context = context;
 	}
 
 	/**
-	 * @deprecated Use 'new Product(Context)' instead. Note that the constructor will not insert the new object in the database.
-	 */
-	@Deprecated
-	public static myfirstmodule.proxies.Product create(IContext context) throws CoreException
-	{
-		IMendixObject mendixObject = Core.create(context, "MyFirstModule.Product");
-		return new myfirstmodule.proxies.Product(context, mendixObject);
-	}
-
-	/**
 	 * @deprecated Use 'Product.load(IContext, IMendixIdentifier)' instead.
 	 */
 	@Deprecated
-	public static myfirstmodule.proxies.Product initialize(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static myfirstmodule.proxies.Product initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return myfirstmodule.proxies.Product.load(context, mendixIdentifier);
 	}
@@ -86,21 +70,21 @@ public class Product
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
 	 */
-	public static myfirstmodule.proxies.Product initialize(IContext context, IMendixObject mendixObject)
+	public static myfirstmodule.proxies.Product initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
 		return new myfirstmodule.proxies.Product(context, mendixObject);
 	}
 
-	public static myfirstmodule.proxies.Product load(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static myfirstmodule.proxies.Product load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
-		IMendixObject mendixObject = Core.retrieveId(context, mendixIdentifier);
+		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
 		return myfirstmodule.proxies.Product.initialize(context, mendixObject);
 	}
 
-	public static java.util.List<myfirstmodule.proxies.Product> load(IContext context, String xpathConstraint) throws CoreException
+	public static java.util.List<myfirstmodule.proxies.Product> load(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String xpathConstraint) throws com.mendix.core.CoreException
 	{
 		java.util.List<myfirstmodule.proxies.Product> result = new java.util.ArrayList<myfirstmodule.proxies.Product>();
-		for (IMendixObject obj : Core.retrieveXPathQuery(context, "//MyFirstModule.Product" + xpathConstraint))
+		for (com.mendix.systemwideinterfaces.core.IMendixObject obj : com.mendix.core.Core.retrieveXPathQuery(context, "//MyFirstModule.Product" + xpathConstraint))
 			result.add(myfirstmodule.proxies.Product.initialize(context, obj));
 		return result;
 	}
@@ -108,17 +92,17 @@ public class Product
 	/**
 	 * Commit the changes made on this proxy object.
 	 */
-	public final void commit() throws CoreException
+	public final void commit() throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
 	 */
-	public final void commit(IContext context) throws CoreException
+	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
@@ -126,15 +110,15 @@ public class Product
 	 */
 	public final void delete()
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 
 	/**
 	 * Delete the object using the specified context.
 	 */
-	public final void delete(IContext context)
+	public final void delete(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 	/**
 	 * @return value of Name
@@ -148,7 +132,7 @@ public class Product
 	 * @param context
 	 * @return value of Name
 	 */
-	public final String getName(IContext context)
+	public final String getName(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.Name.toString());
 	}
@@ -167,7 +151,7 @@ public class Product
 	 * @param context
 	 * @param name
 	 */
-	public final void setName(IContext context, String name)
+	public final void setName(com.mendix.systemwideinterfaces.core.IContext context, String name)
 	{
 		getMendixObject().setValue(context, MemberNames.Name.toString(), name);
 	}
@@ -184,7 +168,7 @@ public class Product
 	 * @param context
 	 * @return value of Price
 	 */
-	public final Double getPrice(IContext context)
+	public final Double getPrice(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (Double) getMendixObject().getValue(context, MemberNames.Price.toString());
 	}
@@ -203,7 +187,7 @@ public class Product
 	 * @param context
 	 * @param price
 	 */
-	public final void setPrice(IContext context, Double price)
+	public final void setPrice(com.mendix.systemwideinterfaces.core.IContext context, Double price)
 	{
 		getMendixObject().setValue(context, MemberNames.Price.toString(), price);
 	}
@@ -211,7 +195,7 @@ public class Product
 	/**
 	 * @return value of Product_ProductGroup
 	 */
-	public final myfirstmodule.proxies.ProductGroup getProduct_ProductGroup() throws CoreException
+	public final myfirstmodule.proxies.ProductGroup getProduct_ProductGroup() throws com.mendix.core.CoreException
 	{
 		return getProduct_ProductGroup(getContext());
 	}
@@ -220,10 +204,10 @@ public class Product
 	 * @param context
 	 * @return value of Product_ProductGroup
 	 */
-	public final myfirstmodule.proxies.ProductGroup getProduct_ProductGroup(IContext context) throws CoreException
+	public final myfirstmodule.proxies.ProductGroup getProduct_ProductGroup(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		myfirstmodule.proxies.ProductGroup result = null;
-		IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.Product_ProductGroup.toString());
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.Product_ProductGroup.toString());
 		if (identifier != null)
 			result = myfirstmodule.proxies.ProductGroup.load(context, identifier);
 		return result;
@@ -243,7 +227,7 @@ public class Product
 	 * @param context
 	 * @param product_productgroup
 	 */
-	public final void setProduct_ProductGroup(IContext context, myfirstmodule.proxies.ProductGroup product_productgroup)
+	public final void setProduct_ProductGroup(com.mendix.systemwideinterfaces.core.IContext context, myfirstmodule.proxies.ProductGroup product_productgroup)
 	{
 		if (product_productgroup == null)
 			getMendixObject().setValue(context, MemberNames.Product_ProductGroup.toString(), null);
@@ -254,7 +238,7 @@ public class Product
 	/**
 	 * @return the IMendixObject instance of this proxy for use in the Core interface.
 	 */
-	public final IMendixObject getMendixObject()
+	public final com.mendix.systemwideinterfaces.core.IMendixObject getMendixObject()
 	{
 		return productMendixObject;
 	}
@@ -262,7 +246,7 @@ public class Product
 	/**
 	 * @return the IContext instance of this proxy, or null if no IContext instance was specified at initialization.
 	 */
-	public final IContext getContext()
+	public final com.mendix.systemwideinterfaces.core.IContext getContext()
 	{
 		return context;
 	}
@@ -290,7 +274,7 @@ public class Product
 	/**
 	 * @return String name of this class
 	 */
-	public static String getType()
+	public static java.lang.String getType()
 	{
 		return "MyFirstModule.Product";
 	}
@@ -300,7 +284,7 @@ public class Product
 	 * @deprecated Use getMendixObject().getId().toLong() to get a unique identifier for this object.
 	 */
 	@Deprecated
-	public String getGUID()
+	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
 	}

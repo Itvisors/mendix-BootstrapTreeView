@@ -4,12 +4,6 @@
 
 package myfirstmodule.proxies;
 
-import com.mendix.core.Core;
-import com.mendix.core.CoreException;
-import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.systemwideinterfaces.core.IMendixIdentifier;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
-
 /**
  * 
  */
@@ -18,7 +12,7 @@ public class ProductNodeData extends myfirstmodule.proxies.ProductTreeNodeData
 	/**
 	 * Internal name of this entity
 	 */
-	public static final String entityName = "MyFirstModule.ProductNodeData";
+	public static final java.lang.String entityName = "MyFirstModule.ProductNodeData";
 
 	/**
 	 * Enum describing members of this entity
@@ -33,47 +27,37 @@ public class ProductNodeData extends myfirstmodule.proxies.ProductTreeNodeData
 		ParentNode("MyFirstModule.ParentNode"),
 		TreeViewNodeData_TreeViewWidgetData("MyFirstModule.TreeViewNodeData_TreeViewWidgetData");
 
-		private String metaName;
+		private java.lang.String metaName;
 
-		MemberNames(String s)
+		MemberNames(java.lang.String s)
 		{
 			metaName = s;
 		}
 
 		@Override
-		public String toString()
+		public java.lang.String toString()
 		{
 			return metaName;
 		}
 	}
 
-	public ProductNodeData(IContext context)
+	public ProductNodeData(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, Core.instantiate(context, "MyFirstModule.ProductNodeData"));
+		this(context, com.mendix.core.Core.instantiate(context, "MyFirstModule.ProductNodeData"));
 	}
 
-	protected ProductNodeData(IContext context, IMendixObject productNodeDataMendixObject)
+	protected ProductNodeData(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject productNodeDataMendixObject)
 	{
 		super(context, productNodeDataMendixObject);
-		if (!Core.isSubClassOf("MyFirstModule.ProductNodeData", productNodeDataMendixObject.getType()))
-			throw new IllegalArgumentException("The given object is not a MyFirstModule.ProductNodeData");
-	}
-
-	/**
-	 * @deprecated Use 'new ProductNodeData(Context)' instead. Note that the constructor will not insert the new object in the database.
-	 */
-	@Deprecated
-	public static myfirstmodule.proxies.ProductNodeData create(IContext context) throws CoreException
-	{
-		IMendixObject mendixObject = Core.create(context, "MyFirstModule.ProductNodeData");
-		return new myfirstmodule.proxies.ProductNodeData(context, mendixObject);
+		if (!com.mendix.core.Core.isSubClassOf("MyFirstModule.ProductNodeData", productNodeDataMendixObject.getType()))
+			throw new java.lang.IllegalArgumentException("The given object is not a MyFirstModule.ProductNodeData");
 	}
 
 	/**
 	 * @deprecated Use 'ProductNodeData.load(IContext, IMendixIdentifier)' instead.
 	 */
 	@Deprecated
-	public static myfirstmodule.proxies.ProductNodeData initialize(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static myfirstmodule.proxies.ProductNodeData initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return myfirstmodule.proxies.ProductNodeData.load(context, mendixIdentifier);
 	}
@@ -82,21 +66,21 @@ public class ProductNodeData extends myfirstmodule.proxies.ProductTreeNodeData
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
 	 */
-	public static myfirstmodule.proxies.ProductNodeData initialize(IContext context, IMendixObject mendixObject)
+	public static myfirstmodule.proxies.ProductNodeData initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
 		return new myfirstmodule.proxies.ProductNodeData(context, mendixObject);
 	}
 
-	public static myfirstmodule.proxies.ProductNodeData load(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static myfirstmodule.proxies.ProductNodeData load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
-		IMendixObject mendixObject = Core.retrieveId(context, mendixIdentifier);
+		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
 		return myfirstmodule.proxies.ProductNodeData.initialize(context, mendixObject);
 	}
 
 	/**
 	 * @return value of ProductNodeData_Product
 	 */
-	public final myfirstmodule.proxies.Product getProductNodeData_Product() throws CoreException
+	public final myfirstmodule.proxies.Product getProductNodeData_Product() throws com.mendix.core.CoreException
 	{
 		return getProductNodeData_Product(getContext());
 	}
@@ -105,10 +89,10 @@ public class ProductNodeData extends myfirstmodule.proxies.ProductTreeNodeData
 	 * @param context
 	 * @return value of ProductNodeData_Product
 	 */
-	public final myfirstmodule.proxies.Product getProductNodeData_Product(IContext context) throws CoreException
+	public final myfirstmodule.proxies.Product getProductNodeData_Product(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		myfirstmodule.proxies.Product result = null;
-		IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.ProductNodeData_Product.toString());
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.ProductNodeData_Product.toString());
 		if (identifier != null)
 			result = myfirstmodule.proxies.Product.load(context, identifier);
 		return result;
@@ -128,7 +112,7 @@ public class ProductNodeData extends myfirstmodule.proxies.ProductTreeNodeData
 	 * @param context
 	 * @param productnodedata_product
 	 */
-	public final void setProductNodeData_Product(IContext context, myfirstmodule.proxies.Product productnodedata_product)
+	public final void setProductNodeData_Product(com.mendix.systemwideinterfaces.core.IContext context, myfirstmodule.proxies.Product productnodedata_product)
 	{
 		if (productnodedata_product == null)
 			getMendixObject().setValue(context, MemberNames.ProductNodeData_Product.toString(), null);
@@ -159,7 +143,7 @@ public class ProductNodeData extends myfirstmodule.proxies.ProductTreeNodeData
 	/**
 	 * @return String name of this class
 	 */
-	public static String getType()
+	public static java.lang.String getType()
 	{
 		return "MyFirstModule.ProductNodeData";
 	}
@@ -170,7 +154,7 @@ public class ProductNodeData extends myfirstmodule.proxies.ProductTreeNodeData
 	 */
 	@Override
 	@Deprecated
-	public String getGUID()
+	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
 	}

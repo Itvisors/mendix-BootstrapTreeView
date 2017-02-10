@@ -4,25 +4,19 @@
 
 package myfirstmodule.proxies;
 
-import com.mendix.core.Core;
-import com.mendix.core.CoreException;
-import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.systemwideinterfaces.core.IMendixIdentifier;
-import com.mendix.systemwideinterfaces.core.IMendixObject;
-
 /**
  * 
  */
 public class TreeViewNodeData
 {
-	private final IMendixObject treeViewNodeDataMendixObject;
+	private final com.mendix.systemwideinterfaces.core.IMendixObject treeViewNodeDataMendixObject;
 
-	private final IContext context;
+	private final com.mendix.systemwideinterfaces.core.IContext context;
 
 	/**
 	 * Internal name of this entity
 	 */
-	public static final String entityName = "MyFirstModule.TreeViewNodeData";
+	public static final java.lang.String entityName = "MyFirstModule.TreeViewNodeData";
 
 	/**
 	 * Enum describing members of this entity
@@ -35,51 +29,41 @@ public class TreeViewNodeData
 		ParentNode("MyFirstModule.ParentNode"),
 		TreeViewNodeData_TreeViewWidgetData("MyFirstModule.TreeViewNodeData_TreeViewWidgetData");
 
-		private String metaName;
+		private java.lang.String metaName;
 
-		MemberNames(String s)
+		MemberNames(java.lang.String s)
 		{
 			metaName = s;
 		}
 
 		@Override
-		public String toString()
+		public java.lang.String toString()
 		{
 			return metaName;
 		}
 	}
 
-	public TreeViewNodeData(IContext context)
+	public TreeViewNodeData(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		this(context, Core.instantiate(context, "MyFirstModule.TreeViewNodeData"));
+		this(context, com.mendix.core.Core.instantiate(context, "MyFirstModule.TreeViewNodeData"));
 	}
 
-	protected TreeViewNodeData(IContext context, IMendixObject treeViewNodeDataMendixObject)
+	protected TreeViewNodeData(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject treeViewNodeDataMendixObject)
 	{
 		if (treeViewNodeDataMendixObject == null)
-			throw new IllegalArgumentException("The given object cannot be null.");
-		if (!Core.isSubClassOf("MyFirstModule.TreeViewNodeData", treeViewNodeDataMendixObject.getType()))
-			throw new IllegalArgumentException("The given object is not a MyFirstModule.TreeViewNodeData");
+			throw new java.lang.IllegalArgumentException("The given object cannot be null.");
+		if (!com.mendix.core.Core.isSubClassOf("MyFirstModule.TreeViewNodeData", treeViewNodeDataMendixObject.getType()))
+			throw new java.lang.IllegalArgumentException("The given object is not a MyFirstModule.TreeViewNodeData");
 
 		this.treeViewNodeDataMendixObject = treeViewNodeDataMendixObject;
 		this.context = context;
 	}
 
 	/**
-	 * @deprecated Use 'new TreeViewNodeData(Context)' instead. Note that the constructor will not insert the new object in the database.
-	 */
-	@Deprecated
-	public static myfirstmodule.proxies.TreeViewNodeData create(IContext context) throws CoreException
-	{
-		IMendixObject mendixObject = Core.create(context, "MyFirstModule.TreeViewNodeData");
-		return new myfirstmodule.proxies.TreeViewNodeData(context, mendixObject);
-	}
-
-	/**
 	 * @deprecated Use 'TreeViewNodeData.load(IContext, IMendixIdentifier)' instead.
 	 */
 	@Deprecated
-	public static myfirstmodule.proxies.TreeViewNodeData initialize(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static myfirstmodule.proxies.TreeViewNodeData initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return myfirstmodule.proxies.TreeViewNodeData.load(context, mendixIdentifier);
 	}
@@ -88,34 +72,34 @@ public class TreeViewNodeData
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
 	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
 	 */
-	public static myfirstmodule.proxies.TreeViewNodeData initialize(IContext context, IMendixObject mendixObject)
+	public static myfirstmodule.proxies.TreeViewNodeData initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
-		if (Core.isSubClassOf("MyFirstModule.ProductTreeNodeData", mendixObject.getType()))
+		if (com.mendix.core.Core.isSubClassOf("MyFirstModule.ProductTreeNodeData", mendixObject.getType()))
 			return myfirstmodule.proxies.ProductTreeNodeData.initialize(context, mendixObject);
 
 		return new myfirstmodule.proxies.TreeViewNodeData(context, mendixObject);
 	}
 
-	public static myfirstmodule.proxies.TreeViewNodeData load(IContext context, IMendixIdentifier mendixIdentifier) throws CoreException
+	public static myfirstmodule.proxies.TreeViewNodeData load(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
-		IMendixObject mendixObject = Core.retrieveId(context, mendixIdentifier);
+		com.mendix.systemwideinterfaces.core.IMendixObject mendixObject = com.mendix.core.Core.retrieveId(context, mendixIdentifier);
 		return myfirstmodule.proxies.TreeViewNodeData.initialize(context, mendixObject);
 	}
 
 	/**
 	 * Commit the changes made on this proxy object.
 	 */
-	public final void commit() throws CoreException
+	public final void commit() throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
 	 * Commit the changes made on this proxy object using the specified context.
 	 */
-	public final void commit(IContext context) throws CoreException
+	public final void commit(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
-		Core.commit(context, getMendixObject());
+		com.mendix.core.Core.commit(context, getMendixObject());
 	}
 
 	/**
@@ -123,15 +107,15 @@ public class TreeViewNodeData
 	 */
 	public final void delete()
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 
 	/**
 	 * Delete the object using the specified context.
 	 */
-	public final void delete(IContext context)
+	public final void delete(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		Core.delete(context, getMendixObject());
+		com.mendix.core.Core.delete(context, getMendixObject());
 	}
 	/**
 	 * @return value of Caption
@@ -145,7 +129,7 @@ public class TreeViewNodeData
 	 * @param context
 	 * @return value of Caption
 	 */
-	public final String getCaption(IContext context)
+	public final String getCaption(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.Caption.toString());
 	}
@@ -164,7 +148,7 @@ public class TreeViewNodeData
 	 * @param context
 	 * @param caption
 	 */
-	public final void setCaption(IContext context, String caption)
+	public final void setCaption(com.mendix.systemwideinterfaces.core.IContext context, String caption)
 	{
 		getMendixObject().setValue(context, MemberNames.Caption.toString(), caption);
 	}
@@ -181,7 +165,7 @@ public class TreeViewNodeData
 	 * @param context
 	 * @return value of NodeClass
 	 */
-	public final String getNodeClass(IContext context)
+	public final String getNodeClass(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.NodeClass.toString());
 	}
@@ -200,7 +184,7 @@ public class TreeViewNodeData
 	 * @param context
 	 * @param nodeclass
 	 */
-	public final void setNodeClass(IContext context, String nodeclass)
+	public final void setNodeClass(com.mendix.systemwideinterfaces.core.IContext context, String nodeclass)
 	{
 		getMendixObject().setValue(context, MemberNames.NodeClass.toString(), nodeclass);
 	}
@@ -217,7 +201,7 @@ public class TreeViewNodeData
 	 * @param context
 	 * @return value of Key
 	 */
-	public final String getKey(IContext context)
+	public final String getKey(com.mendix.systemwideinterfaces.core.IContext context)
 	{
 		return (String) getMendixObject().getValue(context, MemberNames.Key.toString());
 	}
@@ -236,7 +220,7 @@ public class TreeViewNodeData
 	 * @param context
 	 * @param key
 	 */
-	public final void setKey(IContext context, String key)
+	public final void setKey(com.mendix.systemwideinterfaces.core.IContext context, String key)
 	{
 		getMendixObject().setValue(context, MemberNames.Key.toString(), key);
 	}
@@ -244,7 +228,7 @@ public class TreeViewNodeData
 	/**
 	 * @return value of ParentNode
 	 */
-	public final myfirstmodule.proxies.TreeViewNodeData getParentNode() throws CoreException
+	public final myfirstmodule.proxies.TreeViewNodeData getParentNode() throws com.mendix.core.CoreException
 	{
 		return getParentNode(getContext());
 	}
@@ -253,10 +237,10 @@ public class TreeViewNodeData
 	 * @param context
 	 * @return value of ParentNode
 	 */
-	public final myfirstmodule.proxies.TreeViewNodeData getParentNode(IContext context) throws CoreException
+	public final myfirstmodule.proxies.TreeViewNodeData getParentNode(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		myfirstmodule.proxies.TreeViewNodeData result = null;
-		IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.ParentNode.toString());
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.ParentNode.toString());
 		if (identifier != null)
 			result = myfirstmodule.proxies.TreeViewNodeData.load(context, identifier);
 		return result;
@@ -276,7 +260,7 @@ public class TreeViewNodeData
 	 * @param context
 	 * @param parentnode
 	 */
-	public final void setParentNode(IContext context, myfirstmodule.proxies.TreeViewNodeData parentnode)
+	public final void setParentNode(com.mendix.systemwideinterfaces.core.IContext context, myfirstmodule.proxies.TreeViewNodeData parentnode)
 	{
 		if (parentnode == null)
 			getMendixObject().setValue(context, MemberNames.ParentNode.toString(), null);
@@ -287,7 +271,7 @@ public class TreeViewNodeData
 	/**
 	 * @return value of TreeViewNodeData_TreeViewWidgetData
 	 */
-	public final myfirstmodule.proxies.TreeViewWidgetData getTreeViewNodeData_TreeViewWidgetData() throws CoreException
+	public final myfirstmodule.proxies.TreeViewWidgetData getTreeViewNodeData_TreeViewWidgetData() throws com.mendix.core.CoreException
 	{
 		return getTreeViewNodeData_TreeViewWidgetData(getContext());
 	}
@@ -296,10 +280,10 @@ public class TreeViewNodeData
 	 * @param context
 	 * @return value of TreeViewNodeData_TreeViewWidgetData
 	 */
-	public final myfirstmodule.proxies.TreeViewWidgetData getTreeViewNodeData_TreeViewWidgetData(IContext context) throws CoreException
+	public final myfirstmodule.proxies.TreeViewWidgetData getTreeViewNodeData_TreeViewWidgetData(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
 	{
 		myfirstmodule.proxies.TreeViewWidgetData result = null;
-		IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.TreeViewNodeData_TreeViewWidgetData.toString());
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.TreeViewNodeData_TreeViewWidgetData.toString());
 		if (identifier != null)
 			result = myfirstmodule.proxies.TreeViewWidgetData.load(context, identifier);
 		return result;
@@ -319,7 +303,7 @@ public class TreeViewNodeData
 	 * @param context
 	 * @param treeviewnodedata_treeviewwidgetdata
 	 */
-	public final void setTreeViewNodeData_TreeViewWidgetData(IContext context, myfirstmodule.proxies.TreeViewWidgetData treeviewnodedata_treeviewwidgetdata)
+	public final void setTreeViewNodeData_TreeViewWidgetData(com.mendix.systemwideinterfaces.core.IContext context, myfirstmodule.proxies.TreeViewWidgetData treeviewnodedata_treeviewwidgetdata)
 	{
 		if (treeviewnodedata_treeviewwidgetdata == null)
 			getMendixObject().setValue(context, MemberNames.TreeViewNodeData_TreeViewWidgetData.toString(), null);
@@ -330,7 +314,7 @@ public class TreeViewNodeData
 	/**
 	 * @return the IMendixObject instance of this proxy for use in the Core interface.
 	 */
-	public final IMendixObject getMendixObject()
+	public final com.mendix.systemwideinterfaces.core.IMendixObject getMendixObject()
 	{
 		return treeViewNodeDataMendixObject;
 	}
@@ -338,7 +322,7 @@ public class TreeViewNodeData
 	/**
 	 * @return the IContext instance of this proxy, or null if no IContext instance was specified at initialization.
 	 */
-	public final IContext getContext()
+	public final com.mendix.systemwideinterfaces.core.IContext getContext()
 	{
 		return context;
 	}
@@ -366,7 +350,7 @@ public class TreeViewNodeData
 	/**
 	 * @return String name of this class
 	 */
-	public static String getType()
+	public static java.lang.String getType()
 	{
 		return "MyFirstModule.TreeViewNodeData";
 	}
@@ -376,7 +360,7 @@ public class TreeViewNodeData
 	 * @deprecated Use getMendixObject().getId().toLong() to get a unique identifier for this object.
 	 */
 	@Deprecated
-	public String getGUID()
+	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
 	}
