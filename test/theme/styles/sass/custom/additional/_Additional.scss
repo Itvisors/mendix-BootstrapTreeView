@@ -1,0 +1,13 @@
+/*******************************************************
+ *
+ * Additional styling
+ *
+ *******************************************************/
+
+div.mx-name-containerSelectedItem[cssselectorhelper="true"] {
+    button.mx-name-actionButtonSaveItem {
+        border-color: $btn-success-border-color;
+        background-color: $btn-success-bg;
+        color: $btn-success-color;
+    }
+}

@@ -19,6 +19,8 @@ public class ProductTreeNodeData extends treeviewdemo.proxies.TreeViewNodeData
 		Caption("Caption"),
 		NodeClass("NodeClass"),
 		Key("Key"),
+		SubnodesLoaded("SubnodesLoaded"),
+		HasChildren("HasChildren"),
 		ProductTreeNodeData_ProductTreeWidgetData("TreeViewDemo.ProductTreeNodeData_ProductTreeWidgetData"),
 		ParentNode("TreeViewDemo.ParentNode"),
 		TreeViewNodeData_TreeViewWidgetData("TreeViewDemo.TreeViewNodeData_TreeViewWidgetData");

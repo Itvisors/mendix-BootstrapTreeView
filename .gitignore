@@ -5,6 +5,7 @@ test/.settings
 test/deployment/
 test/.classpath
 test/.project
+test/theme/.sass-cache/
 *.launch
 *.tmp
 *.lock

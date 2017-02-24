@@ -19,6 +19,7 @@ public class ProductTreeWidgetData extends treeviewdemo.proxies.TreeViewWidgetDa
 		SelectionType("SelectionType"),
 		Action("Action"),
 		NewSelectionKey("NewSelectionKey"),
+		NodeChanged("NodeChanged"),
 		ProductTreeNodeToDisplay("TreeViewDemo.ProductTreeNodeToDisplay"),
 		ProductTreeWidgetData_Product_New("TreeViewDemo.ProductTreeWidgetData_Product_New");
 

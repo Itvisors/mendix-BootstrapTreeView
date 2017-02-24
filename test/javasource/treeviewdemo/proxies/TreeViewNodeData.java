@@ -23,6 +23,8 @@ public class TreeViewNodeData
 		Caption("Caption"),
 		NodeClass("NodeClass"),
 		Key("Key"),
+		SubnodesLoaded("SubnodesLoaded"),
+		HasChildren("HasChildren"),
 		ParentNode("TreeViewDemo.ParentNode"),
 		TreeViewNodeData_TreeViewWidgetData("TreeViewDemo.TreeViewNodeData_TreeViewWidgetData");
 
@@ -71,6 +73,9 @@ public class TreeViewNodeData
 	 */
 	public static treeviewdemo.proxies.TreeViewNodeData initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
+		if (com.mendix.core.Core.isSubClassOf("TreeViewDemo.MultiLevelNodeData", mendixObject.getType()))
+			return treeviewdemo.proxies.MultiLevelNodeData.initialize(context, mendixObject);
+
 		if (com.mendix.core.Core.isSubClassOf("TreeViewDemo.ProductTreeNodeData", mendixObject.getType()))
 			return treeviewdemo.proxies.ProductTreeNodeData.initialize(context, mendixObject);
 
@@ -220,6 +225,78 @@ public class TreeViewNodeData
 	public final void setKey(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String key)
 	{
 		getMendixObject().setValue(context, MemberNames.Key.toString(), key);
+	}
+
+	/**
+	 * @return value of SubnodesLoaded
+	 */
+	public final java.lang.Boolean getSubnodesLoaded()
+	{
+		return getSubnodesLoaded(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of SubnodesLoaded
+	 */
+	public final java.lang.Boolean getSubnodesLoaded(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.Boolean) getMendixObject().getValue(context, MemberNames.SubnodesLoaded.toString());
+	}
+
+	/**
+	 * Set value of SubnodesLoaded
+	 * @param subnodesloaded
+	 */
+	public final void setSubnodesLoaded(java.lang.Boolean subnodesloaded)
+	{
+		setSubnodesLoaded(getContext(), subnodesloaded);
+	}
+
+	/**
+	 * Set value of SubnodesLoaded
+	 * @param context
+	 * @param subnodesloaded
+	 */
+	public final void setSubnodesLoaded(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Boolean subnodesloaded)
+	{
+		getMendixObject().setValue(context, MemberNames.SubnodesLoaded.toString(), subnodesloaded);
+	}
+
+	/**
+	 * @return value of HasChildren
+	 */
+	public final java.lang.Boolean getHasChildren()
+	{
+		return getHasChildren(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of HasChildren
+	 */
+	public final java.lang.Boolean getHasChildren(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.Boolean) getMendixObject().getValue(context, MemberNames.HasChildren.toString());
+	}
+
+	/**
+	 * Set value of HasChildren
+	 * @param haschildren
+	 */
+	public final void setHasChildren(java.lang.Boolean haschildren)
+	{
+		setHasChildren(getContext(), haschildren);
+	}
+
+	/**
+	 * Set value of HasChildren
+	 * @param context
+	 * @param haschildren
+	 */
+	public final void setHasChildren(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Boolean haschildren)
+	{
+		getMendixObject().setValue(context, MemberNames.HasChildren.toString(), haschildren);
 	}
 
 	/**

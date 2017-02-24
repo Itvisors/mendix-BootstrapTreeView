@@ -5,8 +5,8 @@
     @file      : BootstrapTreeViewWidget.js
     @version   : 1.0
     @author    : Marcel Groeneweg
-    @date      : 10-09-2014
-    @copyright : Synobsys
+    @date      : 16-02-2017
+    @copyright : ITvisors
     @license   : Apache License, Version 2.0, January 2004
 
     Documentation
@@ -35,13 +35,13 @@
             _handle                             : null,
 
             // Extra variables
-            _objMap                             : {},       // The objects as returned by the microflow
-            _appKeyMap                          : {},       // Application key map
-            _nodeClassMap                       : {},       // The node classes as set on the widget. These are kept separately because we need to
+            _objMap                             : null,     // The objects as returned by the microflow
+            _appKeyMap                          : null,     // Application key map
+            _nodeClassMap                       : null,     // The node classes as set on the widget. These are kept separately because we need to
                                                             // remove the previous value from the DOM element when updating the tree.
                                                             // The Mendix object has already been changed when the node is updated
-            _parentObjMap                       : {},
-            _collapsedElementMap                : {},
+            _parentObjMap                       : null,
+            _collapsedElementMap                : null,
             _ulMainElement                      : null,
             _currentDepth                       : 0,
             _parentReferenceName                : null,
@@ -66,6 +66,12 @@
 
                 // postCreate
         //        console.log('BootstrapTreeViewWidget - postCreate');
+                
+                this._objMap = {};
+                this._appKeyMap = {};
+                this._nodeClassMap = {};
+                this._parentObjMap = {};
+                this._collapsedElementMap = {};
 
                 // Load CSS ... automatically from ui directory
 

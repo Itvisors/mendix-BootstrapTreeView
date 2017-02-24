@@ -21,7 +21,8 @@ public class TreeViewWidgetData
 	public enum MemberNames
 	{
 		Action("Action"),
-		NewSelectionKey("NewSelectionKey");
+		NewSelectionKey("NewSelectionKey"),
+		NodeChanged("NodeChanged");
 
 		private java.lang.String metaName;
 
@@ -68,6 +69,9 @@ public class TreeViewWidgetData
 	 */
 	public static treeviewdemo.proxies.TreeViewWidgetData initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
+		if (com.mendix.core.Core.isSubClassOf("TreeViewDemo.MultiLevelWidgetData", mendixObject.getType()))
+			return treeviewdemo.proxies.MultiLevelWidgetData.initialize(context, mendixObject);
+
 		if (com.mendix.core.Core.isSubClassOf("TreeViewDemo.ProductTreeWidgetData", mendixObject.getType()))
 			return treeviewdemo.proxies.ProductTreeWidgetData.initialize(context, mendixObject);
 
@@ -189,6 +193,42 @@ public class TreeViewWidgetData
 	public final void setNewSelectionKey(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String newselectionkey)
 	{
 		getMendixObject().setValue(context, MemberNames.NewSelectionKey.toString(), newselectionkey);
+	}
+
+	/**
+	 * @return value of NodeChanged
+	 */
+	public final java.lang.Boolean getNodeChanged()
+	{
+		return getNodeChanged(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of NodeChanged
+	 */
+	public final java.lang.Boolean getNodeChanged(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.Boolean) getMendixObject().getValue(context, MemberNames.NodeChanged.toString());
+	}
+
+	/**
+	 * Set value of NodeChanged
+	 * @param nodechanged
+	 */
+	public final void setNodeChanged(java.lang.Boolean nodechanged)
+	{
+		setNodeChanged(getContext(), nodechanged);
+	}
+
+	/**
+	 * Set value of NodeChanged
+	 * @param context
+	 * @param nodechanged
+	 */
+	public final void setNodeChanged(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Boolean nodechanged)
+	{
+		getMendixObject().setValue(context, MemberNames.NodeChanged.toString(), nodechanged);
 	}
 
 	/**
