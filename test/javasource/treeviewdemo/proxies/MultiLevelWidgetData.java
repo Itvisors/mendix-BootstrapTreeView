@@ -19,6 +19,7 @@ public class MultiLevelWidgetData extends treeviewdemo.proxies.TreeViewWidgetDat
 		NodeSelected("NodeSelected"),
 		ExpandToLevel("ExpandToLevel"),
 		MaxRecursionLevel("MaxRecursionLevel"),
+		LazyLoadClass("LazyLoadClass"),
 		Action("Action"),
 		NewSelectionKey("NewSelectionKey"),
 		NodeChanged("NodeChanged"),
@@ -182,6 +183,42 @@ public class MultiLevelWidgetData extends treeviewdemo.proxies.TreeViewWidgetDat
 	public final void setMaxRecursionLevel(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Integer maxrecursionlevel)
 	{
 		getMendixObject().setValue(context, MemberNames.MaxRecursionLevel.toString(), maxrecursionlevel);
+	}
+
+	/**
+	 * @return value of LazyLoadClass
+	 */
+	public final java.lang.String getLazyLoadClass()
+	{
+		return getLazyLoadClass(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of LazyLoadClass
+	 */
+	public final java.lang.String getLazyLoadClass(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.LazyLoadClass.toString());
+	}
+
+	/**
+	 * Set value of LazyLoadClass
+	 * @param lazyloadclass
+	 */
+	public final void setLazyLoadClass(java.lang.String lazyloadclass)
+	{
+		setLazyLoadClass(getContext(), lazyloadclass);
+	}
+
+	/**
+	 * Set value of LazyLoadClass
+	 * @param context
+	 * @param lazyloadclass
+	 */
+	public final void setLazyLoadClass(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String lazyloadclass)
+	{
+		getMendixObject().setValue(context, MemberNames.LazyLoadClass.toString(), lazyloadclass);
 	}
 
 	/**

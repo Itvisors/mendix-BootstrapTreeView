@@ -161,19 +161,6 @@ public class Microflows
 			throw new MendixRuntimeException(e);
 		}
 	}
-	public static treeviewdemo.proxies.MultiLevelWidgetData dS_MultiLevelWidgetData(IContext context)
-	{
-		try
-		{
-			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
-			IMendixObject result = (IMendixObject)Core.execute(context, "TreeViewDemo.DS_MultiLevelWidgetData", params);
-			return result == null ? null : treeviewdemo.proxies.MultiLevelWidgetData.initialize(context, result);
-		}
-		catch (CoreException e)
-		{
-			throw new MendixRuntimeException(e);
-		}
-	}
 	public static treeviewdemo.proxies.ProductTreeWidgetData dS_ProductTree(IContext context)
 	{
 		try
@@ -377,6 +364,18 @@ public class Microflows
 					result.add(treeviewdemo.proxies.TreeViewNodeData.initialize(context, obj));
 			}
 			return result;
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
+	public static void nT_MultiLevelTree_DefaultStyling(IContext context)
+	{
+		try
+		{
+			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
+			Core.execute(context, "TreeViewDemo.NT_MultiLevelTree_DefaultStyling", params);
 		}
 		catch (CoreException e)
 		{
