@@ -1,3 +1,5 @@
+/*jslint browser:true, nomen:true, plusplus: true */
+/*global mx, mendix, require, console, alert, define, module, logger */
 /**
     Widget Name
     ========================
@@ -285,7 +287,7 @@
                 this._ulMainElement.id = 'ul' + this._contextObj.getGuid();
                 domClass.add(this._ulMainElement, this.baseClass);
                 this._currentDepth = 0;
-                this._showObjList(this._ulMainElement, mainObjMap, 'treeview-main');
+                this._showObjList(this._ulMainElement, mainObjMap, this.mainNodeClass);
 
                 // Show the tree
                 this.domNode.appendChild(this._ulMainElement);
@@ -384,10 +386,10 @@
                             parentElement = dom.byId('li' + parentId);
                             if (parentElement) {
                                 // Is parent element currently a leaf node? If so, transform to expandable node
-                                if (domClass.contains(parentElement, 'treeview-leaf')) {
-                                    domClass.replace(parentElement, 'treeview-expandable treeview-expanded', 'treeview-leaf');
+                                if (domClass.contains(parentElement, this.leafNodeClass)) {
+                                    domClass.replace(parentElement, this.expandableNodeClass + " " + this.expandedClass, this.leafNodeClass);
                                 }
-                                this._createNode(parentElement, obj, 'treeview-sub');
+                                this._createNode(parentElement, obj, this.subNodeClass);
                                 elementCreated = true;
                                 // Update the object maps.
                                 this._updateObjMaps(obj);
@@ -396,7 +398,7 @@
                             }
                         } else {
                             // No parent, add at highest level
-                            this._createNode(this._ulMainElement, obj, 'treeview-main');
+                            this._createNode(this._ulMainElement, obj, this.mainNodeClass);
                             elementCreated = true;
                         }
                     }
@@ -452,7 +454,7 @@
 
                         // Object has child objects?
                         if (this._parentObjMap[objId]) {
-                            this._showObjList(liElement, this._parentObjMap[objId], 'treeview-sub');
+                            this._showObjList(liElement, this._parentObjMap[objId], this.subNodeClass);
                         }
                     }
                 }
@@ -479,7 +481,7 @@
                 }
 
                 // Create the span with the caption
-                spanElement = mxui.dom.create('span', obj.get(this.captionAttr));
+                spanElement = domConstruct.create("span", { innerHTML: obj.get(this.captionAttr) });
                 spanElement.setAttribute(this.ATTR_LEVEL, this._currentDepth);
                 spanElement.setAttribute(this.ATTR_OBJ_ID, objId);
                 spanClass = obj.get(this.classAttr);
@@ -494,9 +496,9 @@
                 on(liElement, 'click', lang.hitch(this, this._handleExpandCollapse));
                 if (this.onClickMicroflow) {
                     on(spanElement, 'click', lang.hitch(this, this._handleItemClick));
-                    domClass.add(spanElement, 'treeview-clickable');
+                    domClass.add(spanElement, this.clickableNodeClass);
                 } else {
-                    domClass.add(spanElement, 'treeview-not-clickable');
+                    domClass.add(spanElement, this.nonClickableNodeClass);
                 }
 
                 // Put the pieces together
@@ -505,9 +507,9 @@
 
                 // Object has child objects?
                 if (this._parentObjMap[objId]) {
-                    domClass.add(liElement, 'treeview-expandable treeview-expanded');
+                    domClass.add(liElement, this.expandableNodeClass + " " + this.expandedClass);
                 } else {
-                    domClass.add(liElement, 'treeview-leaf');
+                    domClass.add(liElement, this.leafNodeClass);
                 }
 
                 return liElement;
@@ -527,10 +529,10 @@
                 obj = this._objMap[objId];
                 appKey = obj.get(this.appKeyAttr);
 
-                if (domClass.contains(target, 'treeview-expanded')) {
+                if (domClass.contains(target, this.expandedClass)) {
                     this._hideNode(target);
                     this._collapsedElementMap[appKey] = appKey;
-                } else if (domClass.contains(target, 'treeview-collapsed')) {
+                } else if (domClass.contains(target, this.collapsedClass)) {
                     this._showNode(target);
                     delete this._collapsedElementMap[appKey];
                 }
@@ -542,12 +544,12 @@
                 domQuery('#' + target.id + ' > li').forEach(function (liElement) {
                     domQuery('#' + liElement.id).style('display', 'none');
                 });
-                domClass.replace(target, 'treeview-collapsed', 'treeview-expanded');
+                domClass.replace(target, this.collapsedClass, this.expandedClass);
             },
 
             _showNode : function (target) {
                 domQuery('#' + target.id + ' > li').style('display', '');
-                domClass.replace(target, 'treeview-expanded', 'treeview-collapsed');
+                domClass.replace(target, this.expandedClass, this.collapsedClass);
             },
 
             _handleItemClick : function (evt) {
@@ -575,11 +577,12 @@
                     node,
                     nodeList,
                     selectedNode,
-                    targetId;
+                    targetId,
+                    thisObj = this;
 
                 // Remove the mark on any other node
-                domQuery('#' + this._ulMainElement.id + ' span.treeview-selected').forEach(function (element) {
-                    domClass.remove(element, 'treeview-selected');
+                domQuery('#' + this._ulMainElement.id + ' span.' + this.selectedNodeClass).forEach(function (element) {
+                    domClass.remove(element, thisObj.selectedNodeClass);
                 });
 
                 selectedNode = null;
@@ -591,13 +594,13 @@
                         selectedNode = nodeList[0];
                         node = selectedNode.parentElement;
                         while (node.nodeName === 'LI') {
-                            if (domClass.contains(node, 'treeview-collapsed')) {
+                            if (domClass.contains(node, this.collapsedClass)) {
                                 this._showNode(node);
                             }
                             node = node.parentElement;
                         }
                         // Set the selected class and scroll into view
-                        domClass.add(selectedNode, 'treeview-selected');
+                        domClass.add(selectedNode, this.selectedNodeClass);
                         win.scrollIntoView(selectedNode);
                         // Call the microflow
         //                console.log('_setSelectionById call microflow');

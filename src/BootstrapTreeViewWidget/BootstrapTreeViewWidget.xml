@@ -6,11 +6,9 @@
   <icon>R0lGODlhEAAQAJEAAMDAwNjW1v///1BQUCH5BAEAAAAALAAAAAAQABAAAAImhI+Jw6w5hBxvSUGraU6f7H3hAnUlNwQguZjsCKyh3Dwoo8I1jBQAOw==</icon>
 
   <properties>
-        <property key="baseClass" type="string" required="true" defaultValue="TreeViewWidget">
-            <caption>Base CSS class</caption>
-            <category>Appearance</category>
-            <description>The base CSS class, used to style the entire tree.</description>
-        </property>
+      
+        <!-- Configuration -->
+
         <property key="actionAttr" type="attribute" required="true">
             <caption>Action attribute</caption>
             <category>Configuration</category>
@@ -27,6 +25,9 @@
                 <attributeType name="String"/>
             </attributeTypes>
         </property>
+      
+        <!-- Data source -->
+
         <property key="dataEntity" type="entity" required="true" allowNonPersistableEntities="true" >
             <caption>Data entity</caption>
             <category>Data source</category>
@@ -61,6 +62,9 @@
             <category>Data source</category>
             <description>The parent reference, often a self reference on the data entity.</description>
         </property>
+      
+        <!-- Events -->
+
         <property key="getDataMicroflow" type="microflow" required="true" defaultValue="">
             <caption>Get data microflow</caption>
             <category>Events</category>
@@ -73,6 +77,60 @@
             <description>This microflow is called when a node in the tree is clicked.</description>
             <returnType type="Void"></returnType>
         </property>
+
+        <!-- Styling -->
+      
+        <property key="baseClass" type="string" required="true" defaultValue="TreeViewWidget">
+            <caption>Base CSS class</caption>
+            <category>Styling</category>
+            <description>The base CSS class, used to style the entire tree.</description>
+        </property>
+        <property key="mainNodeClass" type="string" required="true" defaultValue="treeview-main">
+            <caption>Main node class</caption>
+            <category>Styling</category>
+            <description>The CSS class to use for a main node (top level).</description>
+        </property>
+        <property key="subNodeClass" type="string" required="true" defaultValue="treeview-sub">
+            <caption>Sub node class</caption>
+            <category>Styling</category>
+            <description>The CSS class to use for a sub node.</description>
+        </property>
+        <property key="expandableNodeClass" type="string" required="true" defaultValue="treeview-expandable">
+            <caption>Expandable node class</caption>
+            <category>Styling</category>
+            <description>The CSS class to use for an expandable node.</description>
+        </property>
+        <property key="expandedClass" type="string" required="true" defaultValue="treeview-expanded">
+            <caption>Expanded class</caption>
+            <category>Styling</category>
+            <description>The CSS class to use for an expanded node.</description>
+        </property>
+        <property key="collapsedClass" type="string" required="true" defaultValue="treeview-collapsed">
+            <caption>Collapsed class</caption>
+            <category>Styling</category>
+            <description>The CSS class to use for a collapsed node.</description>
+        </property>
+        <property key="leafNodeClass" type="string" required="true" defaultValue="treeview-leaf">
+            <caption>Leaf node class</caption>
+            <category>Styling</category>
+            <description>The CSS class to use for a leaf node.</description>
+        </property>
+        <property key="clickableNodeClass" type="string" required="true" defaultValue="treeview-clickable">
+            <caption>Clickable node class</caption>
+            <category>Styling</category>
+            <description>The CSS class to use for a clickable node.</description>
+        </property>
+        <property key="nonClickableNodeClass" type="string" required="true" defaultValue="treeview-not-clickable">
+            <caption>Non clickable node class</caption>
+            <category>Styling</category>
+            <description>The CSS class to use for a non-clickable node.</description>
+        </property>
+        <property key="selectedNodeClass" type="string" required="true" defaultValue="treeview-selected">
+            <caption>Selected node class</caption>
+            <category>Styling</category>
+            <description>The CSS class to use for the selected node.</description>
+        </property>
+
 	</properties>
 </widget>
 

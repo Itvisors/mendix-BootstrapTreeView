@@ -12,11 +12,8 @@ Mendix Tree view widget. Rather than configuring the data model in the widget, t
 - Lower lever objects have a parent; the tree is build by linking objects using their parent reference
 - Set the currently selected item from a microflow
 - Fully reload the tree or only perform an incremental update, to update or add nodes without re-rendering the tree.
-
-
-##Dependencies
-
-Mendix 5.x Environment
+- Lazy loading
+- Supports self references
 
 ##Configuration
 The entity configuration may look complex but it really isn't.
@@ -40,9 +37,6 @@ The node data entity is used to represent the nodes in the tree. Usually, a tree
 The widget should be placed inside a dataview connected to the widget data entity, or a specialization of it.
 
 ###Properties
-
-####Base CSS class
-The Base CSS class can be used to adjust the styling for a specific tree view. Please check the widget CSS for the CSS classes that need to be duplicated.
 
 ####Action attribute
 The Action attribute tells the widget to perform a task:
@@ -76,3 +70,6 @@ The Get data microflow is called for a full or partial build of the tree. It rec
 
 ####On click microflow
 Optional. The On click microflow is called when a node is clicked and after the setSelection action selects the node.
+
+####Styling
+The Base CSS class can be used to adjust the styling for a specific tree view. Please check the widget CSS for the CSS classes that need to be duplicated. It is also possible to override individual classes using the styling properties.
