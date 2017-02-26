@@ -15,6 +15,19 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
 public class Microflows
 {
 	// These are the microflows for the TreeViewDemo module
+	public static void aCT_CloseDemoPage(IContext context, treeviewdemo.proxies.TreeViewWidgetData _widgetData)
+	{
+		try
+		{
+			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
+			params.put("WidgetData", _widgetData == null ? null : _widgetData.getMendixObject());
+			Core.execute(context, "TreeViewDemo.ACT_CloseDemoPage", params);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
 	public static void aCT_MultiLevel_SaveNewFromTree(IContext context, treeviewdemo.proxies.MultiLevelWidgetData _widgetData)
 	{
 		try
@@ -364,6 +377,18 @@ public class Microflows
 					result.add(treeviewdemo.proxies.TreeViewNodeData.initialize(context, obj));
 			}
 			return result;
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
+	public static void nT_MultiLevelTree_CustomStyling(IContext context)
+	{
+		try
+		{
+			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
+			Core.execute(context, "TreeViewDemo.NT_MultiLevelTree_CustomStyling", params);
 		}
 		catch (CoreException e)
 		{

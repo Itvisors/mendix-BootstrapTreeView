@@ -11,3 +11,19 @@ div.mx-name-containerSelectedItem[cssselectorhelper="true"] {
         color: $btn-success-color;
     }
 }
+
+.TreeViewWidget.CustomStyling {
+
+    .LazyloadExpandableCustom {
+        padding-left: 16px;
+        margin-left: -14px;
+        background: url(/widgets/BootstrapTreeViewWidget/widget/ui/images/expand-chevron-small.png) no-repeat 0px 5px;
+    }
+    
+    .ExpandedNodeCustom {
+        background: url(/widgets/BootstrapTreeViewWidget/widget/ui/images/collapse-chevron-small.png) no-repeat 0px 5px;
+    }
+    .CollapsedNodeCustom {
+        background: url(/widgets/BootstrapTreeViewWidget/widget/ui/images/expand-chevron-small.png) no-repeat 0px 5px;
+    }
+}

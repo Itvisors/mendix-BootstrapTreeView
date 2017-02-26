@@ -1187,3 +1187,15 @@ div.mx-name-containerSelectedItem[cssselectorhelper="true"] button.mx-name-actio
   background-color: #76ca02;
   color: #FFF;
 }
+
+.TreeViewWidget.CustomStyling .LazyloadExpandableCustom {
+  padding-left: 16px;
+  margin-left: -14px;
+  background: url(/widgets/BootstrapTreeViewWidget/widget/ui/images/expand-chevron-small.png) no-repeat 0px 5px;
+}
+.TreeViewWidget.CustomStyling .ExpandedNodeCustom {
+  background: url(/widgets/BootstrapTreeViewWidget/widget/ui/images/collapse-chevron-small.png) no-repeat 0px 5px;
+}
+.TreeViewWidget.CustomStyling .CollapsedNodeCustom {
+  background: url(/widgets/BootstrapTreeViewWidget/widget/ui/images/expand-chevron-small.png) no-repeat 0px 5px;
+}

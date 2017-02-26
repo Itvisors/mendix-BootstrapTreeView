@@ -33,6 +33,7 @@ ul.TreeViewWidget .treeview-leaf {
 
 ul.TreeViewWidget li {
     padding-top: 2px;
+    display: list-item;
 }
 
 ul.TreeViewWidget li span {
