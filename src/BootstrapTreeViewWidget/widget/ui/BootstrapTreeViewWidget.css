@@ -62,6 +62,9 @@ ul.TreeViewWidget li span.treeview-not-clickable {
     background-color: white;
     z-index:1;
     cursor: move;
+    max-height: 300px;
+    overflow: hidden;
+    opacity: 0.7;    
 }
 
 .treeview-draggable.ui-draggable.ui-draggable-dragging label {

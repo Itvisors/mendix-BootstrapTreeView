@@ -539,7 +539,7 @@ define([
                 domClass.add(spanElement, this.nonClickableNodeClass);
             }
 
-            // Drag and drop. Put on the span because the dragged structure would become too large
+            // Drag and drop. The span is used to make because large dragged structures make it difficult to see where to drop them.
             if (this.allowDnD) {
                 draggableClass = obj.get(this.draggableClassAttr);
                 if (draggableClass) {
@@ -616,6 +616,7 @@ define([
             
             args = {
                 containment : "#" + this.id,
+                helper      : "clone",
                 revert      : "invalid"
             };
             $(element).draggable(args);
