@@ -25,7 +25,9 @@ public class MultiLevelWidgetData extends treeviewdemo.proxies.TreeViewWidgetDat
 		NodeChanged("NodeChanged"),
 		MultiLevelNodeToDisplay("TreeViewDemo.MultiLevelNodeToDisplay"),
 		MultiLevelWidgetData_MultiLevel_New("TreeViewDemo.MultiLevelWidgetData_MultiLevel_New"),
-		MultiLevelNodesToUpdate("TreeViewDemo.MultiLevelNodesToUpdate");
+		MultiLevelNodesToUpdate("TreeViewDemo.MultiLevelNodesToUpdate"),
+		MultiLevelWidgetData_DraggedNode("TreeViewDemo.MultiLevelWidgetData_DraggedNode"),
+		MultiLevelWidgetData_DropTargetNode("TreeViewDemo.MultiLevelWidgetData_DropTargetNode");
 
 		private java.lang.String metaName;
 
@@ -351,6 +353,92 @@ public class MultiLevelWidgetData extends treeviewdemo.proxies.TreeViewWidgetDat
 		for (treeviewdemo.proxies.MultiLevelNodeData proxyObject : multilevelnodestoupdate)
 			identifiers.add(proxyObject.getMendixObject().getId());
 		getMendixObject().setValue(context, MemberNames.MultiLevelNodesToUpdate.toString(), identifiers);
+	}
+
+	/**
+	 * @return value of MultiLevelWidgetData_DraggedNode
+	 */
+	public final treeviewdemo.proxies.MultiLevelNodeData getMultiLevelWidgetData_DraggedNode() throws com.mendix.core.CoreException
+	{
+		return getMultiLevelWidgetData_DraggedNode(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of MultiLevelWidgetData_DraggedNode
+	 */
+	public final treeviewdemo.proxies.MultiLevelNodeData getMultiLevelWidgetData_DraggedNode(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
+	{
+		treeviewdemo.proxies.MultiLevelNodeData result = null;
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.MultiLevelWidgetData_DraggedNode.toString());
+		if (identifier != null)
+			result = treeviewdemo.proxies.MultiLevelNodeData.load(context, identifier);
+		return result;
+	}
+
+	/**
+	 * Set value of MultiLevelWidgetData_DraggedNode
+	 * @param multilevelwidgetdata_draggednode
+	 */
+	public final void setMultiLevelWidgetData_DraggedNode(treeviewdemo.proxies.MultiLevelNodeData multilevelwidgetdata_draggednode)
+	{
+		setMultiLevelWidgetData_DraggedNode(getContext(), multilevelwidgetdata_draggednode);
+	}
+
+	/**
+	 * Set value of MultiLevelWidgetData_DraggedNode
+	 * @param context
+	 * @param multilevelwidgetdata_draggednode
+	 */
+	public final void setMultiLevelWidgetData_DraggedNode(com.mendix.systemwideinterfaces.core.IContext context, treeviewdemo.proxies.MultiLevelNodeData multilevelwidgetdata_draggednode)
+	{
+		if (multilevelwidgetdata_draggednode == null)
+			getMendixObject().setValue(context, MemberNames.MultiLevelWidgetData_DraggedNode.toString(), null);
+		else
+			getMendixObject().setValue(context, MemberNames.MultiLevelWidgetData_DraggedNode.toString(), multilevelwidgetdata_draggednode.getMendixObject().getId());
+	}
+
+	/**
+	 * @return value of MultiLevelWidgetData_DropTargetNode
+	 */
+	public final treeviewdemo.proxies.MultiLevelNodeData getMultiLevelWidgetData_DropTargetNode() throws com.mendix.core.CoreException
+	{
+		return getMultiLevelWidgetData_DropTargetNode(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of MultiLevelWidgetData_DropTargetNode
+	 */
+	public final treeviewdemo.proxies.MultiLevelNodeData getMultiLevelWidgetData_DropTargetNode(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
+	{
+		treeviewdemo.proxies.MultiLevelNodeData result = null;
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.MultiLevelWidgetData_DropTargetNode.toString());
+		if (identifier != null)
+			result = treeviewdemo.proxies.MultiLevelNodeData.load(context, identifier);
+		return result;
+	}
+
+	/**
+	 * Set value of MultiLevelWidgetData_DropTargetNode
+	 * @param multilevelwidgetdata_droptargetnode
+	 */
+	public final void setMultiLevelWidgetData_DropTargetNode(treeviewdemo.proxies.MultiLevelNodeData multilevelwidgetdata_droptargetnode)
+	{
+		setMultiLevelWidgetData_DropTargetNode(getContext(), multilevelwidgetdata_droptargetnode);
+	}
+
+	/**
+	 * Set value of MultiLevelWidgetData_DropTargetNode
+	 * @param context
+	 * @param multilevelwidgetdata_droptargetnode
+	 */
+	public final void setMultiLevelWidgetData_DropTargetNode(com.mendix.systemwideinterfaces.core.IContext context, treeviewdemo.proxies.MultiLevelNodeData multilevelwidgetdata_droptargetnode)
+	{
+		if (multilevelwidgetdata_droptargetnode == null)
+			getMendixObject().setValue(context, MemberNames.MultiLevelWidgetData_DropTargetNode.toString(), null);
+		else
+			getMendixObject().setValue(context, MemberNames.MultiLevelWidgetData_DropTargetNode.toString(), multilevelwidgetdata_droptargetnode.getMendixObject().getId());
 	}
 
 	@Override

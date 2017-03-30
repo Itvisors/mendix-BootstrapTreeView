@@ -41,6 +41,20 @@ public class Microflows
 			throw new MendixRuntimeException(e);
 		}
 	}
+	public static void aCT_MultiLevel_SetAsMainNode(IContext context, treeviewdemo.proxies.MultiLevel _multiLevel, treeviewdemo.proxies.MultiLevelNodeData _node)
+	{
+		try
+		{
+			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
+			params.put("MultiLevel", _multiLevel == null ? null : _multiLevel.getMendixObject());
+			params.put("Node", _node == null ? null : _node.getMendixObject());
+			Core.execute(context, "TreeViewDemo.ACT_MultiLevel_SetAsMainNode", params);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
 	public static void aCT_MultiLevelTree_AddChild(IContext context, treeviewdemo.proxies.MultiLevel _multiLevel, treeviewdemo.proxies.MultiLevelNodeData _node)
 	{
 		try
@@ -352,6 +366,19 @@ public class Microflows
 			throw new MendixRuntimeException(e);
 		}
 	}
+	public static void jS_MultiLevelTree_OnDrop(IContext context, treeviewdemo.proxies.MultiLevelWidgetData _widgetData)
+	{
+		try
+		{
+			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
+			params.put("WidgetData", _widgetData == null ? null : _widgetData.getMendixObject());
+			Core.execute(context, "TreeViewDemo.JS_MultiLevelTree_OnDrop", params);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
 	public static java.util.List<treeviewdemo.proxies.ProductTreeNodeData> jS_ProductTree_GetData(IContext context, treeviewdemo.proxies.ProductTreeWidgetData _widgetData)
 	{
 		try
@@ -473,6 +500,20 @@ public class Microflows
 					result.add(treeviewdemo.proxies.MultiLevel.initialize(context, obj));
 			}
 			return result;
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
+	public static treeviewdemo.proxies.MultiLevelNodeData sUB_MultiLevelNode_GetParent(IContext context, treeviewdemo.proxies.MultiLevelNodeData _node)
+	{
+		try
+		{
+			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
+			params.put("Node", _node == null ? null : _node.getMendixObject());
+			IMendixObject result = (IMendixObject)Core.execute(context, "TreeViewDemo.SUB_MultiLevelNode_GetParent", params);
+			return result == null ? null : treeviewdemo.proxies.MultiLevelNodeData.initialize(context, result);
 		}
 		catch (CoreException e)
 		{
