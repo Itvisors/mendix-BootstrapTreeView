@@ -25,6 +25,21 @@
                 <attributeType name="String"/>
             </attributeTypes>
         </property>
+        <property key="allowDnD" type="boolean" defaultValue="false">
+            <caption>Allow drag and drop</caption>
+            <category>Configuration</category>
+            <description>Allow drag and drop of elements.</description>
+        </property>
+        <property key="draggedReference" type="entity" isPath="yes" pathType="reference" allowNonPersistableEntities="true" required="false">
+            <caption>Dragged item reference</caption>
+            <category>Configuration</category>
+            <description>The dragged item reference, reference to the the data entity.</description>
+        </property>
+        <property key="dropTargetReference" type="entity" isPath="yes" pathType="reference" allowNonPersistableEntities="true" required="false">
+            <caption>Drop target item reference</caption>
+            <category>Configuration</category>
+            <description>The drop target item reference, reference to the the data entity.</description>
+        </property>
       
         <!-- Data source -->
 
@@ -57,6 +72,22 @@
                 <attributeType name="String"/>
             </attributeTypes>
         </property>
+        <property key="draggableClassAttr" type="attribute" entityProperty="dataEntity" required="false">
+            <caption>Draggable class attribute</caption>
+            <category>Data source</category>
+            <description>The attribute used as CSS draggable class on the elements. Required to make an element draggable.</description>
+            <attributeTypes>
+                <attributeType name="String"/>
+            </attributeTypes>
+        </property>
+        <property key="dropTargetSelectorAttr" type="attribute" entityProperty="dataEntity" required="false">
+            <caption>Drop target selector attribute</caption>
+            <category>Data source</category>
+            <description>The attribute used as drop target CSS selector on the elements. Required to make the element a drop target.</description>
+            <attributeTypes>
+                <attributeType name="String"/>
+            </attributeTypes>
+        </property>
         <property key="parentReference" type="entity" entityProperty="dataEntity" isPath="yes" pathType="reference" allowNonPersistableEntities="true" required="true">
             <caption>Parent reference</caption>
             <category>Data source</category>
@@ -75,6 +106,12 @@
             <caption>On click microflow</caption>
             <category>Events</category>
             <description>This microflow is called when a node in the tree is clicked.</description>
+            <returnType type="Void"></returnType>
+        </property>
+        <property key="onDropMicroflow" type="microflow" required="false" defaultValue="">
+            <caption>On drop microflow</caption>
+            <category>Events</category>
+            <description>This microflow is called when a node in the tree is dropped.</description>
             <returnType type="Void"></returnType>
         </property>
 
@@ -129,6 +166,21 @@
             <caption>Selected node class</caption>
             <category>Styling</category>
             <description>The CSS class to use for the selected node.</description>
+        </property>
+        <property key="draggableNodeClass" type="string" required="true" defaultValue="treeview-draggable">
+            <caption>Draggable node class</caption>
+            <category>Styling</category>
+            <description>The CSS class to use for a draggable node.</description>
+        </property>
+        <property key="dropTargetNodeClass" type="string" required="true" defaultValue="treeview-droptarget">
+            <caption>Drop target node class</caption>
+            <category>Styling</category>
+            <description>The CSS class to use for a drop target node.</description>
+        </property>
+        <property key="dropTargetHoverClass" type="string" required="true" defaultValue="treeview-droptarget-hover">
+            <caption>Drop target hover class</caption>
+            <category>Styling</category>
+            <description>The CSS class to use while hovering over an acceptable drop target.</description>
         </property>
 
 	</properties>

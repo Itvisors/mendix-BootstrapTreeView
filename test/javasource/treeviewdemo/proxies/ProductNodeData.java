@@ -18,6 +18,8 @@ public class ProductNodeData extends treeviewdemo.proxies.ProductTreeNodeData
 	{
 		Caption("Caption"),
 		NodeClass("NodeClass"),
+		DraggableClass("DraggableClass"),
+		DropTargetSelector("DropTargetSelector"),
 		Key("Key"),
 		SubnodesLoaded("SubnodesLoaded"),
 		HasChildren("HasChildren"),

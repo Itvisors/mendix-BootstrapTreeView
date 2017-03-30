@@ -21,7 +21,9 @@ public class ProductTreeWidgetData extends treeviewdemo.proxies.TreeViewWidgetDa
 		NewSelectionKey("NewSelectionKey"),
 		NodeChanged("NodeChanged"),
 		ProductTreeNodeToDisplay("TreeViewDemo.ProductTreeNodeToDisplay"),
-		ProductTreeWidgetData_Product_New("TreeViewDemo.ProductTreeWidgetData_Product_New");
+		ProductTreeWidgetData_Product_New("TreeViewDemo.ProductTreeWidgetData_Product_New"),
+		ProductTreeWidgetData_DraggedNode("TreeViewDemo.ProductTreeWidgetData_DraggedNode"),
+		ProductTreeWidgetData_DropTargetNode("TreeViewDemo.ProductTreeWidgetData_DropTargetNode");
 
 		private java.lang.String metaName;
 
@@ -201,6 +203,92 @@ public class ProductTreeWidgetData extends treeviewdemo.proxies.TreeViewWidgetDa
 			getMendixObject().setValue(context, MemberNames.ProductTreeWidgetData_Product_New.toString(), null);
 		else
 			getMendixObject().setValue(context, MemberNames.ProductTreeWidgetData_Product_New.toString(), producttreewidgetdata_product_new.getMendixObject().getId());
+	}
+
+	/**
+	 * @return value of ProductTreeWidgetData_DraggedNode
+	 */
+	public final treeviewdemo.proxies.ProductTreeNodeData getProductTreeWidgetData_DraggedNode() throws com.mendix.core.CoreException
+	{
+		return getProductTreeWidgetData_DraggedNode(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of ProductTreeWidgetData_DraggedNode
+	 */
+	public final treeviewdemo.proxies.ProductTreeNodeData getProductTreeWidgetData_DraggedNode(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
+	{
+		treeviewdemo.proxies.ProductTreeNodeData result = null;
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.ProductTreeWidgetData_DraggedNode.toString());
+		if (identifier != null)
+			result = treeviewdemo.proxies.ProductTreeNodeData.load(context, identifier);
+		return result;
+	}
+
+	/**
+	 * Set value of ProductTreeWidgetData_DraggedNode
+	 * @param producttreewidgetdata_draggednode
+	 */
+	public final void setProductTreeWidgetData_DraggedNode(treeviewdemo.proxies.ProductTreeNodeData producttreewidgetdata_draggednode)
+	{
+		setProductTreeWidgetData_DraggedNode(getContext(), producttreewidgetdata_draggednode);
+	}
+
+	/**
+	 * Set value of ProductTreeWidgetData_DraggedNode
+	 * @param context
+	 * @param producttreewidgetdata_draggednode
+	 */
+	public final void setProductTreeWidgetData_DraggedNode(com.mendix.systemwideinterfaces.core.IContext context, treeviewdemo.proxies.ProductTreeNodeData producttreewidgetdata_draggednode)
+	{
+		if (producttreewidgetdata_draggednode == null)
+			getMendixObject().setValue(context, MemberNames.ProductTreeWidgetData_DraggedNode.toString(), null);
+		else
+			getMendixObject().setValue(context, MemberNames.ProductTreeWidgetData_DraggedNode.toString(), producttreewidgetdata_draggednode.getMendixObject().getId());
+	}
+
+	/**
+	 * @return value of ProductTreeWidgetData_DropTargetNode
+	 */
+	public final treeviewdemo.proxies.ProductTreeNodeData getProductTreeWidgetData_DropTargetNode() throws com.mendix.core.CoreException
+	{
+		return getProductTreeWidgetData_DropTargetNode(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of ProductTreeWidgetData_DropTargetNode
+	 */
+	public final treeviewdemo.proxies.ProductTreeNodeData getProductTreeWidgetData_DropTargetNode(com.mendix.systemwideinterfaces.core.IContext context) throws com.mendix.core.CoreException
+	{
+		treeviewdemo.proxies.ProductTreeNodeData result = null;
+		com.mendix.systemwideinterfaces.core.IMendixIdentifier identifier = getMendixObject().getValue(context, MemberNames.ProductTreeWidgetData_DropTargetNode.toString());
+		if (identifier != null)
+			result = treeviewdemo.proxies.ProductTreeNodeData.load(context, identifier);
+		return result;
+	}
+
+	/**
+	 * Set value of ProductTreeWidgetData_DropTargetNode
+	 * @param producttreewidgetdata_droptargetnode
+	 */
+	public final void setProductTreeWidgetData_DropTargetNode(treeviewdemo.proxies.ProductTreeNodeData producttreewidgetdata_droptargetnode)
+	{
+		setProductTreeWidgetData_DropTargetNode(getContext(), producttreewidgetdata_droptargetnode);
+	}
+
+	/**
+	 * Set value of ProductTreeWidgetData_DropTargetNode
+	 * @param context
+	 * @param producttreewidgetdata_droptargetnode
+	 */
+	public final void setProductTreeWidgetData_DropTargetNode(com.mendix.systemwideinterfaces.core.IContext context, treeviewdemo.proxies.ProductTreeNodeData producttreewidgetdata_droptargetnode)
+	{
+		if (producttreewidgetdata_droptargetnode == null)
+			getMendixObject().setValue(context, MemberNames.ProductTreeWidgetData_DropTargetNode.toString(), null);
+		else
+			getMendixObject().setValue(context, MemberNames.ProductTreeWidgetData_DropTargetNode.toString(), producttreewidgetdata_droptargetnode.getMendixObject().getId());
 	}
 
 	@Override

@@ -20,6 +20,7 @@ public class ProductGroup
 	 */
 	public enum MemberNames
 	{
+		SequenceNumber("SequenceNumber"),
 		Name("Name");
 
 		private java.lang.String metaName;
@@ -115,6 +116,42 @@ public class ProductGroup
 	{
 		com.mendix.core.Core.delete(context, getMendixObject());
 	}
+	/**
+	 * @return value of SequenceNumber
+	 */
+	public final java.lang.Integer getSequenceNumber()
+	{
+		return getSequenceNumber(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of SequenceNumber
+	 */
+	public final java.lang.Integer getSequenceNumber(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.Integer) getMendixObject().getValue(context, MemberNames.SequenceNumber.toString());
+	}
+
+	/**
+	 * Set value of SequenceNumber
+	 * @param sequencenumber
+	 */
+	public final void setSequenceNumber(java.lang.Integer sequencenumber)
+	{
+		setSequenceNumber(getContext(), sequencenumber);
+	}
+
+	/**
+	 * Set value of SequenceNumber
+	 * @param context
+	 * @param sequencenumber
+	 */
+	public final void setSequenceNumber(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Integer sequencenumber)
+	{
+		getMendixObject().setValue(context, MemberNames.SequenceNumber.toString(), sequencenumber);
+	}
+
 	/**
 	 * @return value of Name
 	 */

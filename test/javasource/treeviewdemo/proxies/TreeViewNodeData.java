@@ -22,6 +22,8 @@ public class TreeViewNodeData
 	{
 		Caption("Caption"),
 		NodeClass("NodeClass"),
+		DraggableClass("DraggableClass"),
+		DropTargetSelector("DropTargetSelector"),
 		Key("Key"),
 		SubnodesLoaded("SubnodesLoaded"),
 		HasChildren("HasChildren"),
@@ -189,6 +191,78 @@ public class TreeViewNodeData
 	public final void setNodeClass(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String nodeclass)
 	{
 		getMendixObject().setValue(context, MemberNames.NodeClass.toString(), nodeclass);
+	}
+
+	/**
+	 * @return value of DraggableClass
+	 */
+	public final java.lang.String getDraggableClass()
+	{
+		return getDraggableClass(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of DraggableClass
+	 */
+	public final java.lang.String getDraggableClass(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.DraggableClass.toString());
+	}
+
+	/**
+	 * Set value of DraggableClass
+	 * @param draggableclass
+	 */
+	public final void setDraggableClass(java.lang.String draggableclass)
+	{
+		setDraggableClass(getContext(), draggableclass);
+	}
+
+	/**
+	 * Set value of DraggableClass
+	 * @param context
+	 * @param draggableclass
+	 */
+	public final void setDraggableClass(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String draggableclass)
+	{
+		getMendixObject().setValue(context, MemberNames.DraggableClass.toString(), draggableclass);
+	}
+
+	/**
+	 * @return value of DropTargetSelector
+	 */
+	public final java.lang.String getDropTargetSelector()
+	{
+		return getDropTargetSelector(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of DropTargetSelector
+	 */
+	public final java.lang.String getDropTargetSelector(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.DropTargetSelector.toString());
+	}
+
+	/**
+	 * Set value of DropTargetSelector
+	 * @param droptargetselector
+	 */
+	public final void setDropTargetSelector(java.lang.String droptargetselector)
+	{
+		setDropTargetSelector(getContext(), droptargetselector);
+	}
+
+	/**
+	 * Set value of DropTargetSelector
+	 * @param context
+	 * @param droptargetselector
+	 */
+	public final void setDropTargetSelector(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String droptargetselector)
+	{
+		getMendixObject().setValue(context, MemberNames.DropTargetSelector.toString(), droptargetselector);
 	}
 
 	/**

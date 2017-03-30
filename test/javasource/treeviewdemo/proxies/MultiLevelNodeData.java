@@ -18,6 +18,8 @@ public class MultiLevelNodeData extends treeviewdemo.proxies.TreeViewNodeData
 	{
 		Caption("Caption"),
 		NodeClass("NodeClass"),
+		DraggableClass("DraggableClass"),
+		DropTargetSelector("DropTargetSelector"),
 		Key("Key"),
 		SubnodesLoaded("SubnodesLoaded"),
 		HasChildren("HasChildren"),

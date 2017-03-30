@@ -162,6 +162,30 @@ public class Microflows
 			throw new MendixRuntimeException(e);
 		}
 	}
+	public static void aCT_ProductGroup_New(IContext context)
+	{
+		try
+		{
+			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
+			Core.execute(context, "TreeViewDemo.ACT_ProductGroup_New", params);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
+	public static void aCT_ProductGroup_Resequence(IContext context)
+	{
+		try
+		{
+			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
+			Core.execute(context, "TreeViewDemo.ACT_ProductGroup_Resequence", params);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
 	public static boolean aSU_TreeViewDemo(IContext context)
 	{
 		try
@@ -362,6 +386,19 @@ public class Microflows
 			throw new MendixRuntimeException(e);
 		}
 	}
+	public static void jS_ProductTree_OnDrop(IContext context, treeviewdemo.proxies.ProductTreeWidgetData _productTreeWidgetData)
+	{
+		try
+		{
+			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
+			params.put("ProductTreeWidgetData", _productTreeWidgetData == null ? null : _productTreeWidgetData.getMendixObject());
+			Core.execute(context, "TreeViewDemo.JS_ProductTree_OnDrop", params);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
 	public static java.util.List<treeviewdemo.proxies.TreeViewNodeData> jS_SimpleDemo_GetData(IContext context, treeviewdemo.proxies.TreeViewWidgetData _treeViewWidgetData)
 	{
 		try
@@ -524,6 +561,50 @@ public class Microflows
 					result.add(treeviewdemo.proxies.ProductTreeNodeData.initialize(context, obj));
 			}
 			return result;
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
+	public static treeviewdemo.proxies.ProductGroup sUB_ProductTree_GetSelectedProductGroupNode(IContext context, treeviewdemo.proxies.ProductTreeWidgetData _widgetData)
+	{
+		try
+		{
+			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
+			params.put("widgetData", _widgetData == null ? null : _widgetData.getMendixObject());
+			IMendixObject result = (IMendixObject)Core.execute(context, "TreeViewDemo.SUB_ProductTree_GetSelectedProductGroupNode", params);
+			return result == null ? null : treeviewdemo.proxies.ProductGroup.initialize(context, result);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
+	public static void sUB_ProductTree_OnDrop_Product(IContext context, treeviewdemo.proxies.ProductNodeData _productNode, treeviewdemo.proxies.ProductTreeNodeData _dropTargetNode, treeviewdemo.proxies.ProductTreeWidgetData _productTreeWidgetData)
+	{
+		try
+		{
+			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
+			params.put("ProductNode", _productNode == null ? null : _productNode.getMendixObject());
+			params.put("DropTargetNode", _dropTargetNode == null ? null : _dropTargetNode.getMendixObject());
+			params.put("ProductTreeWidgetData", _productTreeWidgetData == null ? null : _productTreeWidgetData.getMendixObject());
+			Core.execute(context, "TreeViewDemo.SUB_ProductTree_OnDrop_Product", params);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
+	public static void sUB_ProductTree_OnDrop_ProductGroup(IContext context, treeviewdemo.proxies.ProductTreeNodeData _dropTargetNode, treeviewdemo.proxies.ProductTreeWidgetData _productTreeWidgetData, treeviewdemo.proxies.ProductGroupNodeData _productGroupDraggedNode)
+	{
+		try
+		{
+			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
+			params.put("DropTargetNode", _dropTargetNode == null ? null : _dropTargetNode.getMendixObject());
+			params.put("ProductTreeWidgetData", _productTreeWidgetData == null ? null : _productTreeWidgetData.getMendixObject());
+			params.put("ProductGroupDraggedNode", _productGroupDraggedNode == null ? null : _productGroupDraggedNode.getMendixObject());
+			Core.execute(context, "TreeViewDemo.SUB_ProductTree_OnDrop_ProductGroup", params);
 		}
 		catch (CoreException e)
 		{
