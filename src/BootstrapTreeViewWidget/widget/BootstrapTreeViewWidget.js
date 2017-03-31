@@ -335,9 +335,14 @@ define([
             for (appKey in this._collapsedElementMap) {
                 if (this._collapsedElementMap.hasOwnProperty(appKey)) {
                     obj = this._appKeyMap[appKey];
-                    element = dom.byId("li" + obj.getGuid());
-                    if (element) {
-                        this._hideNode(element);
+                    if (obj) {
+                        element = dom.byId("li" + obj.getGuid());
+                        if (element) {
+                            this._hideNode(element);
+                        } else {
+                            // No longer exists
+                            delete this._collapsedElementMap[appKey];
+                        }
                     } else {
                         // No longer exists
                         delete this._collapsedElementMap[appKey];

@@ -545,6 +545,29 @@ public class Microflows
 			throw new MendixRuntimeException(e);
 		}
 	}
+	public static void sUB_MultiLevelTree_ExpandParent(IContext context, treeviewdemo.proxies.MultiLevelWidgetData _widgetData, treeviewdemo.proxies.MultiLevel _currentItem, treeviewdemo.proxies.MultiLevelNodeData _nodeToDisplay, java.util.List<treeviewdemo.proxies.MultiLevelNodeData> _updateNodeList)
+	{
+		try
+		{
+			Map<java.lang.String, Object> params = new HashMap<java.lang.String, Object>();
+			params.put("WidgetData", _widgetData == null ? null : _widgetData.getMendixObject());
+			params.put("CurrentItem", _currentItem == null ? null : _currentItem.getMendixObject());
+			params.put("NodeToDisplay", _nodeToDisplay == null ? null : _nodeToDisplay.getMendixObject());
+			java.util.ArrayList<IMendixObject> listparam_updateNodeList = null;
+			if (_updateNodeList != null)
+			{
+				listparam_updateNodeList = new java.util.ArrayList<IMendixObject>();
+				for (treeviewdemo.proxies.MultiLevelNodeData obj : _updateNodeList)
+					listparam_updateNodeList.add(obj.getMendixObject());
+			}
+			params.put("UpdateNodeList", listparam_updateNodeList);
+			Core.execute(context, "TreeViewDemo.SUB_MultiLevelTree_ExpandParent", params);
+		}
+		catch (CoreException e)
+		{
+			throw new MendixRuntimeException(e);
+		}
+	}
 	public static java.util.List<treeviewdemo.proxies.MultiLevelNodeData> sUB_MultiLevelTree_GetData_FullRefresh(IContext context, treeviewdemo.proxies.MultiLevelWidgetData _widgetData)
 	{
 		try
