@@ -443,6 +443,7 @@ define([
                         // No parent, add at highest level
                         this._createNode(this._ulMainElement, obj, this.mainNodeClass);
                         elementCreated = true;
+                        this._updateObjMaps(obj);
                     }
                 }
                 // In the next run, only process the objects that were skipped.
