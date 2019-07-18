@@ -34,19 +34,21 @@ public class FileFromFileDocument extends CustomJavaAction<java.lang.Boolean>
 		this.__fileDocument = fileDocument;
 	}
 
-	@Override
+	@java.lang.Override
 	public java.lang.Boolean executeAction() throws Exception
 	{
 		this.fileDocument = __fileDocument == null ? null : system.proxies.FileDocument.initialize(getContext(), __fileDocument);
 
 		// BEGIN USER CODE
 		File output = new File(targetFile);
-		FileOutputStream fos = new FileOutputStream(output);
-		InputStream is = Core.getFileDocumentContent(getContext(), 
-				fileDocument.getMendixObject());
-		IOUtils.copy(is, fos);
-		fos.close();
-		is.close();
+		
+		try (
+			FileOutputStream fos = new FileOutputStream(output);
+			InputStream is = Core.getFileDocumentContent(getContext(), fileDocument.getMendixObject());
+		) {
+			IOUtils.copy(is, fos);
+		}
+		
 		return true;
 		// END USER CODE
 	}
@@ -54,7 +56,7 @@ public class FileFromFileDocument extends CustomJavaAction<java.lang.Boolean>
 	/**
 	 * Returns a string representation of this action
 	 */
-	@Override
+	@java.lang.Override
 	public java.lang.String toString()
 	{
 		return "FileFromFileDocument";

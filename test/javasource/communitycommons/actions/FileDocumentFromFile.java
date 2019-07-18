@@ -32,16 +32,19 @@ public class FileDocumentFromFile extends CustomJavaAction<java.lang.Boolean>
 		this.__fileDocument = fileDocument;
 	}
 
-	@Override
+	@java.lang.Override
 	public java.lang.Boolean executeAction() throws Exception
 	{
 		this.fileDocument = __fileDocument == null ? null : system.proxies.FileDocument.initialize(getContext(), __fileDocument);
 
 		// BEGIN USER CODE
-		FileInputStream fis = new FileInputStream(new File(this.file));
-		Core.storeFileDocumentContent(getContext(), fileDocument.getMendixObject(), 
+		try (
+			FileInputStream fis = new FileInputStream(new File(this.file))
+		) {
+			Core.storeFileDocumentContent(getContext(), fileDocument.getMendixObject(), 
 				this.file, fis);
-		fis.close();
+		}
+		
 		return true;
 		// END USER CODE
 	}
@@ -49,7 +52,7 @@ public class FileDocumentFromFile extends CustomJavaAction<java.lang.Boolean>
 	/**
 	 * Returns a string representation of this action
 	 */
-	@Override
+	@java.lang.Override
 	public java.lang.String toString()
 	{
 		return "FileDocumentFromFile";

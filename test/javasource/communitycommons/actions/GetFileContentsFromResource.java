@@ -32,7 +32,7 @@ public class GetFileContentsFromResource extends CustomJavaAction<java.lang.Bool
 		this.__fileDocument = fileDocument;
 	}
 
-	@Override
+	@java.lang.Override
 	public java.lang.Boolean executeAction() throws Exception
 	{
 		this.fileDocument = __fileDocument == null ? null : system.proxies.FileDocument.initialize(getContext(), __fileDocument);
@@ -41,9 +41,11 @@ public class GetFileContentsFromResource extends CustomJavaAction<java.lang.Bool
 		File myFile = new File(Core.getConfiguration().getResourcesPath() + 
 				File.separator + filename);
 
-		FileInputStream fis = new FileInputStream(myFile);
-		Core.storeFileDocumentContent(getContext(), fileDocument.getMendixObject(), 
-				filename, fis);
+		try (
+			FileInputStream fis = new FileInputStream(myFile)
+		) {
+			Core.storeFileDocumentContent(getContext(), fileDocument.getMendixObject(), filename, fis);
+		}
 		
 		return true;
 		// END USER CODE
@@ -52,7 +54,7 @@ public class GetFileContentsFromResource extends CustomJavaAction<java.lang.Bool
 	/**
 	 * Returns a string representation of this action
 	 */
-	@Override
+	@java.lang.Override
 	public java.lang.String toString()
 	{
 		return "GetFileContentsFromResource";

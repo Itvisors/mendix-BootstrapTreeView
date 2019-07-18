@@ -19,27 +19,27 @@ import com.mendix.webui.CustomJavaAction;
  */
 public class executeMicroflowAsUser_1 extends CustomJavaAction<java.lang.String>
 {
-	private java.lang.String microflowName;
+	private java.lang.String microflow;
 	private java.lang.String username;
 	private java.lang.Boolean sudoContext;
 	private java.lang.String arg1name;
 	private IMendixObject arg1value;
 
-	public executeMicroflowAsUser_1(IContext context, java.lang.String microflowName, java.lang.String username, java.lang.Boolean sudoContext, java.lang.String arg1name, IMendixObject arg1value)
+	public executeMicroflowAsUser_1(IContext context, java.lang.String microflow, java.lang.String username, java.lang.Boolean sudoContext, java.lang.String arg1name, IMendixObject arg1value)
 	{
 		super(context);
-		this.microflowName = microflowName;
+		this.microflow = microflow;
 		this.username = username;
 		this.sudoContext = sudoContext;
 		this.arg1name = arg1name;
 		this.arg1value = arg1value;
 	}
 
-	@Override
+	@java.lang.Override
 	public java.lang.String executeAction() throws Exception
 	{
 		// BEGIN USER CODE
-		Object res = Misc.executeMicroflowAsUser(getContext(), microflowName, username, sudoContext, arg1name, arg1value);
+		Object res = Misc.executeMicroflowAsUser(getContext(), microflow, username, sudoContext, arg1name, arg1value);
 		return res == null ? null : res.toString();
 		// END USER CODE
 	}
@@ -47,7 +47,7 @@ public class executeMicroflowAsUser_1 extends CustomJavaAction<java.lang.String>
 	/**
 	 * Returns a string representation of this action
 	 */
-	@Override
+	@java.lang.Override
 	public java.lang.String toString()
 	{
 		return "executeMicroflowAsUser_1";

@@ -31,28 +31,28 @@ import com.mendix.webui.CustomJavaAction;
  */
 public class executeMicroflowInBackground extends CustomJavaAction<java.lang.Boolean>
 {
-	private java.lang.String microflowName;
+	private java.lang.String microflow;
 	private IMendixObject contextObject;
 
-	public executeMicroflowInBackground(IContext context, java.lang.String microflowName, IMendixObject contextObject)
+	public executeMicroflowInBackground(IContext context, java.lang.String microflow, IMendixObject contextObject)
 	{
 		super(context);
-		this.microflowName = microflowName;
+		this.microflow = microflow;
 		this.contextObject = contextObject;
 	}
 
-	@Override
+	@java.lang.Override
 	public java.lang.Boolean executeAction() throws Exception
 	{
 		// BEGIN USER CODE
-		return  Misc.runMicroflowInBackground(getContext(), microflowName, contextObject);
+		return  Misc.runMicroflowInBackground(getContext(), microflow, contextObject);
 		// END USER CODE
 	}
 
 	/**
 	 * Returns a string representation of this action
 	 */
-	@Override
+	@java.lang.Override
 	public java.lang.String toString()
 	{
 		return "executeMicroflowInBackground";

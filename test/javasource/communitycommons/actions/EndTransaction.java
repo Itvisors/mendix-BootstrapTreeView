@@ -13,7 +13,7 @@ import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
 
 /**
- * Ends the current transaction.
+ * Commit the transaction, this will end this transaction or remove a save point from the queue if the transaction is nested
  */
 public class EndTransaction extends CustomJavaAction<java.lang.Boolean>
 {
@@ -22,7 +22,7 @@ public class EndTransaction extends CustomJavaAction<java.lang.Boolean>
 		super(context);
 	}
 
-	@Override
+	@java.lang.Override
 	public java.lang.Boolean executeAction() throws Exception
 	{
 		// BEGIN USER CODE
@@ -34,7 +34,7 @@ public class EndTransaction extends CustomJavaAction<java.lang.Boolean>
 	/**
 	 * Returns a string representation of this action
 	 */
-	@Override
+	@java.lang.Override
 	public java.lang.String toString()
 	{
 		return "EndTransaction";

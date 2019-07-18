@@ -22,23 +22,23 @@ import com.mendix.webui.CustomJavaAction;
  */
 public class executeMicroflowAsUser extends CustomJavaAction<java.lang.String>
 {
-	private java.lang.String microflowName;
+	private java.lang.String microflow;
 	private java.lang.String username;
 	private java.lang.Boolean sudoContext;
 
-	public executeMicroflowAsUser(IContext context, java.lang.String microflowName, java.lang.String username, java.lang.Boolean sudoContext)
+	public executeMicroflowAsUser(IContext context, java.lang.String microflow, java.lang.String username, java.lang.Boolean sudoContext)
 	{
 		super(context);
-		this.microflowName = microflowName;
+		this.microflow = microflow;
 		this.username = username;
 		this.sudoContext = sudoContext;
 	}
 
-	@Override
+	@java.lang.Override
 	public java.lang.String executeAction() throws Exception
 	{
 		// BEGIN USER CODE
-		Object res = Misc.executeMicroflowAsUser(getContext(), microflowName, username, sudoContext);
+		Object res = Misc.executeMicroflowAsUser(getContext(), microflow, username, sudoContext);
 		return res == null ? null : res.toString();
 		// END USER CODE
 	}
@@ -46,7 +46,7 @@ public class executeMicroflowAsUser extends CustomJavaAction<java.lang.String>
 	/**
 	 * Returns a string representation of this action
 	 */
-	@Override
+	@java.lang.Override
 	public java.lang.String toString()
 	{
 		return "executeMicroflowAsUser";

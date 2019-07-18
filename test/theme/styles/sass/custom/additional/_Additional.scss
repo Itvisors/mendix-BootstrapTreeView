@@ -6,9 +6,9 @@
 
 div.mx-name-containerSelectedItem[cssselectorhelper="true"] {
     button.mx-name-actionButtonSaveItem {
-        border-color: $btn-success-border-color;
-        background-color: $btn-success-bg;
-        color: $btn-success-color;
+        border-color: $brand-success;
+        background-color: $brand-success;
+        color: $brand-success;
     }
 }
 
@@ -19,7 +19,7 @@ div.mx-name-containerSelectedItem[cssselectorhelper="true"] {
         margin-left: -14px;
         background: url(/widgets/BootstrapTreeViewWidget/widget/ui/images/expand-chevron-small.png) no-repeat 0px 5px;
     }
-    
+
     .ExpandedNodeCustom {
         background: url(/widgets/BootstrapTreeViewWidget/widget/ui/images/collapse-chevron-small.png) no-repeat 0px 5px;
     }
