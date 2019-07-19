@@ -118,7 +118,7 @@ define([
 
             // postCreate
         //    console.log("BootstrapTreeViewWidget - postCreate");
-                
+
             this._objMap = {};
             this._appKeyMap = {};
             this._nodeClassMap = {};
@@ -338,7 +338,12 @@ define([
                     if (obj) {
                         element = dom.byId("li" + obj.getGuid());
                         if (element) {
-                            this._hideNode(element);
+                            if (domClass.contains(element, this.leafNodeClass)) {
+                                // Now a leaf node, can happen with lazy loading.
+                                delete this._collapsedElementMap[appKey];
+                            } else {
+                                this._hideNode(element);
+                            }
                         } else {
                             // No longer exists
                             delete this._collapsedElementMap[appKey];
@@ -611,15 +616,15 @@ define([
             this._setSelectionById(evt.target.getAttribute(this.ATTR_OBJ_ID));
             evt.stopPropagation();
         },
-        
+
         _makeDraggable : function (element, obj, draggableClass) {
             var args;
 
             domClass.add(element, this.draggableNodeClass);
             domClass.add(element, draggableClass);
-            
+
             // This widget was started as pure Dojo widget. Only the parts related to drag/drop are implemented using jQuery
-            
+
             args = {
                 containment : "#" + this.id,
                 helper      : "clone",
@@ -633,7 +638,7 @@ define([
                 thisObj = this;
 
             domClass.add(element, this.dropTargetNodeClass);
-            
+
             // This widget was started as pure Dojo widget. Only the parts related to drag/drop are implemented using jQuery
             args = {
                 accept      : dropTargetSelector,
@@ -645,20 +650,20 @@ define([
             };
             $(element).droppable(args);
         },
-        
-            
+
+
         _handleDropEvent : function (event, ui, obj) {
             var draggedReferenceName,
                 draggedObjectGuid,
                 dropTargetReferenceName;
-            
+
             draggedObjectGuid = ui.draggable.attr(this.ATTR_OBJ_ID);
-            
+
             event.stopImmediatePropagation();
-            
+
             draggedReferenceName = this.draggedReference.substr(0, this.draggedReference.indexOf('/'));
             dropTargetReferenceName = this.dropTargetReference.substr(0, this.dropTargetReference.indexOf('/'));
-            
+
             this._contextObj.addReference(draggedReferenceName, draggedObjectGuid);
             this._contextObj.addReference(dropTargetReferenceName, obj.getGuid());
             if (this.onDropMicroflow) {
@@ -676,7 +681,7 @@ define([
                 console.log("Treeview: no microflow set to receive drop events");
             }
         },
-            
+
         _setSelection : function (selectedKey) {
         //    console.log("_setSelection");
             var obj;
