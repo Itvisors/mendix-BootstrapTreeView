@@ -36,7 +36,7 @@ The node data entity is used to represent the nodes in the tree. Usually, a tree
 ### Pages
 The widget should be placed inside a dataview connected to the widget data entity, or a specialization of it.
 
-###Drag and drop
+### Drag and drop
 The widget can be configured to allow drag and drop of elements in the list. First, in the configuration tab, drag and drop must be allowed.
 
 On the data entity, two CSS class attributes can be used. The draggable class attribute is the CSS class of the draggable element. The drop target CSS selector attribute specifies which dragged elements are allowed to be dropped.. To make an element draggable, it must have a draggable class. To make an element a drop target, it must have a droptarget selector. Any element will only allow drops when the draggable CSS matches its drop target CSS selector.
