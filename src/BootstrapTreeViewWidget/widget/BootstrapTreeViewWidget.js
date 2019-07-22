@@ -5,7 +5,7 @@
     ========================
 
     @file      : BootstrapTreeViewWidget.js
-    @version   : 1.0
+    @version   : 2.1
     @author    : Marcel Groeneweg
     @date      : 16-02-2017
     @copyright : ITvisors

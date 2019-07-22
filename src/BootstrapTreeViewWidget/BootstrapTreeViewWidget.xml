@@ -6,7 +6,7 @@
   <icon>R0lGODlhEAAQAJEAAMDAwNjW1v///1BQUCH5BAEAAAAALAAAAAAQABAAAAImhI+Jw6w5hBxvSUGraU6f7H3hAnUlNwQguZjsCKyh3Dwoo8I1jBQAOw==</icon>
 
   <properties>
-      
+
         <!-- Configuration -->
 
         <property key="actionAttr" type="attribute" required="true">
@@ -40,7 +40,7 @@
             <category>Configuration</category>
             <description>The drop target item reference, reference to the the data entity.</description>
         </property>
-      
+
         <!-- Data source -->
 
         <property key="dataEntity" type="entity" required="true" allowNonPersistableEntities="true" >
@@ -93,7 +93,7 @@
             <category>Data source</category>
             <description>The parent reference, often a self reference on the data entity.</description>
         </property>
-      
+
         <!-- Events -->
 
         <property key="getDataMicroflow" type="microflow" required="true" defaultValue="">
@@ -116,7 +116,7 @@
         </property>
 
         <!-- Styling -->
-      
+
         <property key="baseClass" type="string" required="true" defaultValue="TreeViewWidget">
             <caption>Base CSS class</caption>
             <category>Styling</category>
